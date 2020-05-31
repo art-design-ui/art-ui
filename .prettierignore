@@ -1,0 +1,12 @@
+build/
+
+
+.vscode
+.DS_Store
+
+yarn.lock
+yarn-error.log
+package-lock.json
+yarn-error.log
+
+LICENSE
