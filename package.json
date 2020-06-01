@@ -6,13 +6,18 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "storybook":"start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@babel/core": "7.9.0",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -61,12 +66,7 @@
     "webpack": "4.42.0",
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "4.3.1",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-info": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8"
+    "workbox-webpack-plugin": "4.3.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -139,13 +139,14 @@
     ]
   },
   "devDependencies": {
+    "@storybook/preset-create-react-app": "^3.0.0",
     "@types/classnames": "^2.2.10",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
-    "@typescript-eslint/parser": "^2.34.0",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^2.34.0",
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.0.0",
     "eslint-config-prettier": "^6.0.0",
@@ -161,10 +162,10 @@
     "eslint-tinker": "^0.5.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.7",
-    "stylelint": "^13.5.0",
-    "stylelint-config-standard": "^20.0.0",
+    "react-docgen-typescript-loader": "^3.6.0",
     "style-loader": "0.23.1",
-    "react-docgen-typescript-loader": "^3.6.0"
+    "stylelint": "^13.5.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "config": {
     "commitizen": {
