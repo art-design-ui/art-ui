@@ -22,7 +22,11 @@ module.exports = ({ config }) => {
       },
     ],
   })
-
+  config.module.rules.push({
+    test: /\.(css|scss)$/,
+    exclude: /node_modules/,
+    use: ['style-loader', 'css-loader', 'sass-loader'],
+  })
   config.resolve.extensions.push('.ts', '.tsx')
 
   return config
