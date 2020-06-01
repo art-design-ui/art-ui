@@ -88,6 +88,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'react/require-default-props': 0,
     'react/default-props-match-prop-types': 0,
+    'react/button-has-type': 0,
     'import/no-cycle': 0,
     'react/no-find-dom-node': 0,
     'no-underscore-dangle': 0,

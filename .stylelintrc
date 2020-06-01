@@ -1,9 +1,7 @@
 {
     "extends": [
-      "stylelint-config-standard",
-      "stylelint-config-prettier"
+     "stylelint-config-recommended"
     ],
-    "plugins": ["stylelint-order", "stylelint-declaration-block-no-ignored-properties"],
     "rules": {
       "comment-empty-line-before": null,
       "function-name-case": ["lower", { "ignoreFunctions": ["/colorPalette/"] }],
