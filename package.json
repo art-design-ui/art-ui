@@ -6,7 +6,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "storybook": "start-storybook -p 9009 -s public",
+    "storybook":"start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
@@ -67,7 +67,12 @@
     "webpack": "4.42.0",
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-webpack-plugin": "4.3.1",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/react": "^5.2.8"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -140,11 +145,6 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-info": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.0.0",

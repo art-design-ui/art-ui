@@ -3,4 +3,3 @@ node_modules/
 public/
 scripts/
 config/
-src/serviceWorker.ts

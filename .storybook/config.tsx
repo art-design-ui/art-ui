@@ -1,7 +1,7 @@
 import { configure, addDecorator, addParameters } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import React from 'react'
-
+// 引入scss文件
 import '../src/styles/index.scss'
 const wrapperStyle: React.CSSProperties = {
   padding: '20px 40px',
