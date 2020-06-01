@@ -16,7 +16,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: '16.9',
+      version: '16.13',
     },
   },
   parser: '@typescript-eslint/parser',

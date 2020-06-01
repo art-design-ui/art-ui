@@ -2,6 +2,13 @@
   "name": "art",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "storybook": "start-storybook -p 9009 -s src",
+    "build-storybook": "build-storybook -s src"
+  },
   "dependencies": {
     "@babel/core": "7.9.0",
     "@commitlint/cli": "^8.2.0",
@@ -53,12 +60,6 @@
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.2",
     "semver": "6.3.0",
-    "style-loader": "0.23.1",
-    "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-sass-guidelines": "^7.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
-    "stylelint-order": "^4.0.0",
     "terser-webpack-plugin": "2.3.5",
     "ts-pnp": "1.1.6",
     "typescript": "~3.7.2",
@@ -67,11 +68,6 @@
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1"
-  },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -144,6 +140,11 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/react": "^5.2.8",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.0.0",
@@ -161,7 +162,13 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.7",
     "stylelint": "^13.5.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "style-loader": "0.23.1",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-order": "^4.0.0",
+    "react-docgen-typescript-loader": "^3.6.0"
   },
   "config": {
     "commitizen": {
