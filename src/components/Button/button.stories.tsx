@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import Button from './button'
 
 export default {
-  title: '组件/Button',
+  title: '组件/Button 按钮',
   component: Button,
 }
 
