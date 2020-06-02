@@ -1,6 +1,5 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-// eslint-disable-next-line import/no-named-as-default
 import Button, { ButtonProps } from './button'
 
 const defaultProps = {
