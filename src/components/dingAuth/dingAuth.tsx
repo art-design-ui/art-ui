@@ -2,7 +2,7 @@ import React, { useEffect, FC } from 'react'
 import classNames from 'classnames'
 import { DING_CONFIG, createGotoURL } from './unit'
 
-interface DingProps {
+export interface DingProps {
   /** 钉钉ID（必填） */
   appId: string
   /** 钉钉回调地址（必填） */
