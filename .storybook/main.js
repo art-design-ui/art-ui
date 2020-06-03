@@ -88,14 +88,14 @@ module.exports = {
     const isprod = config.mode === 'production'
     isprod ? (config.devtool = 'none') : (config.devtool = 'none')
 
-    let tser = isprod ? config.optimization.minimizer : []
+    let tser = isprod ? config.optimization.minimizer : config.optimization.minimize
 
     config.performance = {
       maxAssetSize: maxAssetSize,
     }
     config.optimization = {
       minimizer: tser,
-      minimize: isprod ? true : false,
+      minimize: isprod ? true : true,
       splitChunks: {
         chunks: 'all',
         maxSize: maxAssetSize,
