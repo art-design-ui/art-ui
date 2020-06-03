@@ -9,7 +9,7 @@ addParameters({
     PreviewSource: 'open',
   },
   options: {
-    name: 'AUI',
+    name: 'Art',
     showPanel: true,
   },
   dependencies: {
