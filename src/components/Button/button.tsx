@@ -1,54 +1,85 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
+import React ,{FC,ButtonHTMLAttributes,AnchorHTMLAttributes, useEffect, useRef}from 'react'
 import classNames from 'classnames'
 
-export type ButtonSize = 'lg' | 'sm'
 
-export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 
-export type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
+export type ButtonSize = 'lg' | 'sm' |'default'
+export type ButtonType = 'primary' | 'default' | 'danger'|
+'secondary'|'success'|'info'|'light'|'warning'|'dark' | 'link'| 'neu-w-up'|'neu-w-down'|'neu-w-co'|'neu-w-fl'
 
-export type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
+
+
+export interface BaseButtonProps {
+    className?: string
+    disabled?: boolean
+    /** 设置按钮大小 */
+    size?: ButtonSize
+    /**
+    * 设置按钮类型
+    */
+    btnType?: ButtonType
+     /** link类型才有效的url */
+    href?: string,
+      /** 回调ref，组件加载完成回调ref，返回值会在卸载组件时调用 */
+    refcallback?:(ref:any)=>any;
+}
+
+type NativeButtonProps = ButtonHTMLAttributes<HTMLElement> & BaseButtonProps
+type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
-export const Button: FC<ButtonProps> = props => {
-  const { btnType, className, disabled, size, children, href, ...restProps } = props
-  // btn, btn-lg, btn-primary
-  const classes = classNames('btn', className, {
-    [`btn-${btnType || ''}`]: btnType,
-    [`btn-${size || ''}`]: size,
-    disabled: btnType === 'link' && disabled,
-  })
-  if (btnType === 'link' && href) {
-    return (
-      <a className={classes} href={href} {...restProps}>
-        {children}
-      </a>
-    )
-  }
-  return (
-    <button className={classes} disabled={disabled} {...restProps}>
-      {children}
-    </button>
-  )
+export const Button: FC<ButtonProps> = (props:ButtonProps) => {
+    const {
+        btnType,
+        size,
+        disabled,
+        children,
+        href,
+        className,
+        refcallback,
+        ...restProps
+    } = props
+
+    const classes = classNames('btn', className, {
+        [`btn-type-${btnType}`]: btnType,
+        [`btn-size-${size}`]: size,
+        'disabled': (btnType === 'link') && disabled
+    })
+    const btnRef = useRef(null)
+    useEffect(()=>{ 
+        let uninstall:any=null
+        if(refcallback){
+            uninstall= refcallback(btnRef)
+        }
+        return ()=>{
+            if(typeof uninstall ==='function'){
+                uninstall()
+            }
+        }
+    },[ refcallback])
+
+    if (btnType ==='link' ) {
+        return (
+            <a className={classes} href={href} {...restProps} ref ={btnRef} >
+                {children}
+            </a>
+        )
+    } else {
+        return (
+            <button className={classes} disabled={disabled}  {...restProps} ref={btnRef}>
+                {children}
+            </button>
+        )
+    }
 }
 
-export interface BaseButtonProps {
-  className?: string
-  /** 设置 Button 的禁用 */
-  disabled?: boolean
-  /** 设置 Button 的尺寸 */
-  size?: ButtonSize
-  /** 设置 Button 的类型 */
-  btnType?: ButtonType
-  children: React.ReactNode
-  href?: string
-}
-
-// 默认值
 Button.defaultProps = {
-  disabled: false,
-  btnType: 'default',
+    disabled: false,
+    btnType: 'default',
+    size:'default',
+    href:'/'
 }
 
 export default Button
+

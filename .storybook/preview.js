@@ -1,24 +1,30 @@
-import React from 'react'
-import { addDecorator, addParameters } from '@storybook/react'
-import { withA11y } from '@storybook/addon-a11y'
-import { DocsPage } from 'storybook-addon-deps/blocks'
 import '../src/styles/index.scss'
-
+import { create } from '@storybook/theming'
+import { addParameters, configure } from '@storybook/react'
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks'
 addParameters({
-  options: {
-    showRoots: true,
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+    PreviewSource: 'open',
   },
-  docs: { page: DocsPage },
+  options: {
+    name: 'AUI',
+    showPanel: true,
+  },
   dependencies: {
-    //display only dependencies/dependents that have a story in storybook
-    //by default this is false
     withStoriesOnly: true,
-
-    //completely hide a dependency/dependents block if it has no elements
-    //by default this is false
     hideEmpty: true,
   },
 })
-
-addDecorator(withA11y)
-addDecorator(story => <>{story()}</>)
+const loaderFn = () => {
+  const allExports = [
+    require('../src/stories/art.stories.mdx'),
+    require('../src/stories/contribute.stories.mdx'),
+    require('../src/stories/changeLog.stories.mdx'),
+  ]
+  const req = require.context('../src/components', true, /\.stories\.mdx$/)
+  req.keys().forEach(fname => allExports.push(req(fname)))
+  return allExports
+}
+configure(loaderFn, module)

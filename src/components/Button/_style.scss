@@ -1,66 +1,119 @@
-.btn {
+
+.btn{
     position: relative;
     display: inline-block;
     font-weight: $btn-font-weight;
-    line-height: $btn-line-height;
-    color: $body-color;
+    line-height:$btn-line-height;
+    color:$body-color;
     white-space: nowrap;
     text-align: center;
     vertical-align: middle;
     background-image: none;
-    border: $btn-border-width solid transparent;
-    @include button-size( $btn-padding-y,  $btn-padding-x,  $btn-font-size,  $border-radius);
-    box-shadow: $btn-box-shadow;
+    border:$btn-border-width solid transparent;
+
     cursor: pointer;
     transition: $btn-transition;
-    &.disabled,
-    &[disabled] {
-      cursor: not-allowed;
-      opacity: $btn-disabled-opacity;
-      box-shadow: none;
-      > * {
-        pointer-events: none;
-      }
+    @include button-size($btn-padding-x,$btn-padding-y,$btn-font-size,$border-radius);
+    &[disabled]{
+        cursor:not-allowed;
+        opacity: $btn-disabled-opacity;
+        > *{
+            pointer-events: none;
+        }
     }
-  }
-  
-  .btn-lg {
-    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
-  }
-  .btn-sm {
-    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
-  }
-  
-  .btn-primary {
-    @include button-style($primary, $primary, $white)
-  }
-  .btn-danger {
-    @include button-style($danger, $danger, $white)
-  }
-  
-  .btn-default {
-    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary)
-  }
-  
-  .btn-link {
-    font-weight: $font-weight-normal;
+}
+//size
+
+.btn-size-lg{
+    @include button-size($btn-padding-x-lg,$btn-padding-y-lg,$btn-font-size-lg,$border-radius-lg)
+}
+.btn-size-sm{
+    @include button-size($btn-padding-x-sm,$btn-padding-y-sm,$btn-font-size-sm,$border-radius-sm)
+}
+.btn-size-default{
+    @include button-size($btn-padding-x,$btn-padding-y,$btn-font-size,$border-radius)
+}
+//type
+@each $key,$val in $theme-colors{
+    .btn-type-#{$key}{
+        @include button-style(nth($val, 1),nth($val,2));
+        @include neufactory(nth($val, 1),nth($val,3),nth($val,4))
+    }
+}
+
+.btn-type-link{
+    font-weight: $font-weight-base;
     color: $btn-link-color;
     text-decoration: $link-decoration;
     box-shadow: none;
-    &:hover {
-      color: $btn-link-hover-color;
-      text-decoration: $link-hover-decoration; 
+    border:1px dashed lighten($btn-link-color,10%);
+    @include neufactory($white, $neu-whiteshadow1,$neu-whiteshadow2);
+    &:hover{
+        color: $btn-link-hover-color;
+        text-decoration: $link-hover-decoration;
     }
-    &:focus,
-    &.focus {
-      text-decoration: $link-hover-decoration;
-      box-shadow: none;
+    &:focus{
+        text-decoration: $link-hover-decoration;
     }
-    &:disabled,
-    &.disabled {
-      color: $btn-link-disabled-color;
-      pointer-events: none;
+    &.disabled{
+        color:$btn-link-disabled-color;
+        pointer-events: none;
     }
-  }
-  
-    
+}
+
+.btn-type-neu-w-up{
+    font-weight: $font-weight-bold;
+    color: $gray-9;
+    @include neu-white($btn-neu-normal);
+    &:hover{
+        outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+    &.disabled{
+        pointer-events: none;
+    }
+}
+.btn-type-neu-w-down{
+    font-weight: $font-weight-bold;
+    color: $gray-9;
+    @include neu-white-down($btn-neu-normal);
+    &:hover{
+        outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+    &.disabled{
+        pointer-events: none;
+    }
+}
+.btn-type-neu-w-co{
+    font-weight: $font-weight-bold;
+    color: $gray-9;
+    @include neu-white-co($btn-neu-normal);
+    &:hover{
+        outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+    &.disabled{
+        pointer-events: none;
+    }
+}
+.btn-type-neu-w-fl{
+    font-weight: $font-weight-bold;
+    color: $gray-9;
+    @include neu-white-fl($btn-neu-normal);
+    &:hover{
+        outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+    &.disabled{
+        pointer-events: none;
+    }
+}

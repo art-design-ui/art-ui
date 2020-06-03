@@ -16,24 +16,62 @@
 *::after {
   box-sizing: border-box;
 }
+#{$html-selector},body{
+  @include square(100%);
+}
 
+// remove the clear button of a text input control in IE10+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+
+#{$html-selector} {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  -webkit-text-size-adjust: 100%; // 4
+  -ms-text-size-adjust: 100%; // 4
+  -ms-overflow-style: scrollbar; // 5
+  -webkit-tap-highlight-color: rgba($black, 0%); // 6
+}
+
+// IE10+ doesn't honor `<meta name="viewport">` in some cases.
+@-ms-viewport {
+  width: device-width;
+}
+
+// Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers)
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
 // Body
 //
 // 1. Remove the margin in all browsers.
 // 2. As a best practice, apply a default `background-color`.
 // 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
 // 4. Change the default tap highlight to be completely transparent in iOS.
+
 body {
   margin: 0; // 1
   font-family: $font-family-base;
   font-size: $font-size-base;
   font-weight: $font-weight-base;
-  line-height: $line-height-base;
+  font-variant: $font-variant-base;
   color: $body-color;
   text-align: $body-text-align;
   background-color: $body-bg; // 2
-  -webkit-text-size-adjust: 100%; // 3
-  -webkit-tap-highlight-color: rgba($black, 0); // 4
+  overflow: scroll;
 }
 
 // Future-proof rule: in browsers that support :focus-visible, suppress the focus outline
@@ -152,14 +190,14 @@ address {
 
 ol,
 ul {
-  padding-left: 2rem;
+  padding-left: 0;
 }
 
 ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 ol ol,
@@ -353,8 +391,8 @@ button {
 // Credit: https://github.com/suitcss/base/
 
 button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline:none;
+  //outline: 5px auto -webkit-focus-ring-color;
 }
 
 // 1. Remove the margin in Firefox and Safari
@@ -559,4 +597,8 @@ main {
 
 [hidden] {
   display: none !important;
+}
+
+.clearfix {
+  @include clearfix();
 }

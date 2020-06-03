@@ -1,0 +1,247 @@
+import { Meta, Story, Props ,Preview } from '@storybook/addon-docs/blocks';
+import  Button  from './button';
+import NeuWdown,{NeuWclick,Ringclick} from './button.example'
+
+<Meta title='组件 |Button ' component={Button} />
+
+<br/>
+
+# Button 按钮
+<br/>
+
+
+
+## 按钮类型 btnType
+
+
+<Preview >
+  <Story name='按钮类型'>
+   <div>
+      <Button btnType='default' >default</Button>
+      <Button btnType='primary'>primary</Button>
+      <Button btnType='danger'>danger</Button>
+      <Button btnType='warning'>warning</Button>
+      <Button btnType='info'>info</Button>
+      <Button btnType='secondary'>secondary</Button>
+      <Button btnType='success'>success</Button>
+      <Button btnType='light'>light</Button>
+      <Button btnType='dark'>dark</Button>
+   </div>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name='neu-white1'>
+    <Button btnType='neu-w-up' >neu-w-up</Button>
+  </Story>
+  <Story name='neu-white2'>
+    <Button btnType='neu-w-down'>neu-w-down</Button>
+  </Story>
+    <Story name='neu-white3'>
+    <Button btnType='neu-w-co'>neu-w-co</Button>
+  </Story>
+    <Story name='neu-white4'>
+    <Button btnType='neu-w-fl'>neu-w-fl</Button>
+  </Story>
+</Preview>
+
+  
+
+<br/>
+
+## 按钮大小 size
+
+
+<Preview>
+  <Story name='default-lg' >
+    <Button btnType='default' size='lg' >default</Button>
+  </Story>
+  <Story name='primary-lg' >
+    <Button btnType='primary' size='lg'>primary</Button>
+  </Story>
+  <Story name='danger-lg'>
+    <Button btnType='danger' size='lg'>danger</Button>
+  </Story>
+   <Story name='link-lg'>
+    <Button btnType='link' size='lg'>link</Button>
+  </Story>
+</Preview>
+
+
+<Preview>
+  <Story name='neu-w-up-lg' >
+    <Button btnType='neu-w-up' size='lg' >neu-w-up</Button>
+  </Story>
+  <Story name='neu-w-down-lg' >
+    <Button btnType='neu-w-down' size='lg'>neu-w-down</Button>
+  </Story>
+  <Story name='neu-w-co-lg'>
+    <Button btnType='neu-w-co' size='lg'>neu-w-co</Button>
+  </Story>
+   <Story name='neu-w-fl-lg'>
+    <Button btnType='neu-w-fl' size='lg'>neu-w-fl</Button>
+  </Story>
+</Preview>
+
+
+<Preview>
+  <Story name='default-sm' >
+    <Button btnType='default' size='sm' >default</Button>
+  </Story>
+  <Story name='primary-sm' >
+    <Button btnType='primary' size='sm'>primary</Button>
+  </Story>
+  <Story name='danger-sm'>
+    <Button btnType='danger' size='sm'>danger</Button>
+  </Story>
+   <Story name='link-sm'>
+    <Button btnType='link' size='sm'>link</Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name='neu-w-up-sm' >
+    <Button btnType='neu-w-up' size='sm' >neu-w-up</Button>
+  </Story>
+  <Story name='neu-w-down-sm' >
+    <Button btnType='neu-w-down' size='sm'>neu-w-down</Button>
+  </Story>
+  <Story name='neu-w-co-sm'>
+    <Button btnType='neu-w-co' size='sm'>neu-w-co</Button>
+  </Story>
+   <Story name='neu-w-fl-sm'>
+    <Button btnType='neu-w-fl' size='sm'>neu-w-fl</Button>
+  </Story>
+</Preview>
+
+<br/>
+
+
+### 禁用样式 disabled
+
+
+<Preview>
+  <Story name='defaultd' >
+    <Button btnType='default' disabled >default</Button>
+  </Story>
+  <Story name='primaryd' >
+    <Button btnType='primary' disabled>primary</Button>
+  </Story>
+  <Story name='dangerd'>
+    <Button btnType='danger' disabled>danger</Button>
+  </Story>
+   <Story name='linkd'>
+    <Button btnType='link' disabled>link</Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name='neu-white1d'>
+    <Button btnType='neu-w-up' disabled >neu-w-up</Button>
+  </Story>
+  <Story name='neu-white2d'>
+    <Button btnType='neu-w-down' disabled>neu-w-down</Button>
+  </Story>
+    <Story name='neu-white3d'>
+    <Button btnType='neu-w-co' disabled>neu-w-co</Button>
+  </Story>
+    <Story name='neu-white4d'>
+    <Button btnType='neu-w-fl' disabled>neu-w-fl</Button>
+  </Story>
+</Preview>
+
+  
+
+## 类型结合示例 example
+<br/>
+
+有些时候，可能只需要类名进行状态切换，或者做一些特别效果，需要自行封装，下面是一些效果封装方法。
+
+#### 点击切换按钮类型 click ⬇
+
+<Preview>
+<Story name='button-example' >
+  <NeuWdown  callback={()=>console.log('123')}>按下切换状态</NeuWdown>
+</Story>
+</Preview>
+
+自行封装方法⬇
+
+```tsx
+function NeuWdown(props:PropsWithChildren<{callback:()=>void,style?:CSSProperties}>){
+    const [state,setState] = useState(false)
+    return (
+       <Button btnType={state?'neu-w-down':'neu-w-up'} onClick={()=>{
+           setState(!state)
+           props.callback()
+        }} style={props.style}>{props.children}</Button>
+    )
+}
+```
+
+#### 按下切换按钮类型 click ⬇
+
+<Preview>
+<Story name='button-example2' >
+  <NeuWclick callback={()=>console.log('123')}>按下切换按钮类型</NeuWclick>
+</Story>
+</Preview>
+
+自行封装方法⬇
+
+```tsx
+export function NeuWclick(props:PropsWithChildren<{callback:()=>void,style?:CSSProperties}>){
+    const [state,setState] = useState(false)
+    const downReplace=()=>(setState(true))
+    const upReplace =()=>(setState(false))
+    const btnRef = (ref:any)=>{
+        if(ref){
+            ref.current.addEventListener('mousedown',downReplace)
+            ref.current.addEventListener('mouseup',upReplace)
+            ref.current.addEventListener('mouseleave',upReplace)
+        }
+        return()=>{
+            ref.current?.removeEventListener('mouseup',upReplace);
+            ref.current?.removeEventListener('mousedown',downReplace)
+            ref.current?.removeEventListener('mouseleave',downReplace)
+        }
+    }
+    return (
+        <Button btnType={state?'neu-w-down':'neu-w-fl'} 
+            style={props.style}
+            onClick={props.callback}
+            refcallback={btnRef}>{props.children}</Button>
+     )
+}
+```
+
+#### 环状嵌套按钮
+
+- 环状嵌套主要是利用一个凹下去的div嵌套凸起的div。
+
+<Preview>
+<Story name='button-example3' >
+  <Ringclick callback={()=>console.log('123')}>环形按钮</Ringclick>
+</Story>
+</Preview>
+
+自行封装方法⬇
+
+```tsx
+export function Ringclick(props:PropsWithChildren<{callback:()=>void,style?:CSSProperties}>){
+    return (
+    <div className="btn-type-neu-w-down" style={{padding:'10px',display:'inline-block',borderRadius:'5px',...props.style}}>
+        <NeuWclick callback={props.callback}>{props.children}</NeuWclick>
+    </div>
+    )
+}
+```
+
+
+<br/>
+
+## 属性详情 
+
+<Props of={Button} />
+
+## FAQ

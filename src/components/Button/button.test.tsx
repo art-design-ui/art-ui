@@ -9,47 +9,44 @@ const defaultProps = {
 const testProps: ButtonProps = {
   btnType: 'primary',
   size: 'lg',
-  className: 'klass',
+  className: 'testprops',
 }
 
 const disabledProps: ButtonProps = {
   disabled: true,
   onClick: jest.fn(),
 }
+
 describe('test Button component', () => {
   it('should render the correct default button', () => {
-    const wrapper = render(<Button {...defaultProps}>Nice</Button>)
-    const element = wrapper.getByText('Nice') as HTMLButtonElement
-    expect(element).toBeInTheDocument()
-    expect(element.tagName).toEqual('BUTTON')
-    expect(element).toHaveClass('btn btn-default')
-    expect(element.disabled).toBeFalsy()
-    fireEvent.click(element)
+    const wrapper = render(<Button {...defaultProps}>hello</Button>)
+    const ele = wrapper.getByText('hello') as HTMLButtonElement
+    expect(ele).toBeInTheDocument()
+    expect(ele.tagName).toEqual('BUTTON')
+    expect(ele).toHaveClass('btn btn-type-default')
+    expect(ele.disabled).toBeFalsy()
+    fireEvent.click(ele)
     expect(defaultProps.onClick).toHaveBeenCalled()
   })
-  it('should render the correct component based on different props', () => {
-    const wrapper = render(<Button {...testProps}>Nice</Button>)
-    const element = wrapper.getByText('Nice')
-    expect(element).toBeInTheDocument()
-    expect(element).toHaveClass('btn-primary btn-lg klass')
+  it('should render the correct component based on different props ', () => {
+    const wrapper = render(<Button {...testProps}>hello</Button>)
+    const ele = wrapper.getByText('hello')
+    expect(ele).toBeInTheDocument()
+    expect(ele).toHaveClass('btn-type-primary testprops')
   })
-  it('should render a link when btnType equals link and href is provided', () => {
-    const wrapper = render(
-      <Button btnType="link" href="http://dummyurl">
-        Link
-      </Button>,
-    )
-    const element = wrapper.getByText('Link')
-    expect(element).toBeInTheDocument()
-    expect(element.tagName).toEqual('A')
-    expect(element).toHaveClass('btn btn-link')
+  it('should render a link when btnType equal link', () => {
+    const wrapper = render(<Button btnType="link">linkbutton</Button>)
+    const ele = wrapper.getByText('linkbutton')
+    expect(ele).toBeInTheDocument()
+    expect(ele.tagName).toEqual('A')
+    expect(ele).toHaveClass('btn btn-type-link')
   })
-  it('should render disabled button when disabled set to true', () => {
-    const wrapper = render(<Button {...disabledProps}>Nice</Button>)
-    const element = wrapper.getByText('Nice') as HTMLButtonElement
-    expect(element).toBeInTheDocument()
-    expect(element.disabled).toBeTruthy()
-    fireEvent.click(element)
+  it('should render disabled when disabled set', () => {
+    const wrapper = render(<Button {...disabledProps}>hello</Button>)
+    const ele = wrapper.getByText('hello') as HTMLButtonElement
+    expect(ele).toBeInTheDocument()
+    expect(ele.disabled).toBeTruthy()
+    fireEvent.click(ele)
     expect(disabledProps.onClick).not.toHaveBeenCalled()
   })
 })
