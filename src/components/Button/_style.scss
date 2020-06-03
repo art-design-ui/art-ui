@@ -20,7 +20,7 @@
     }
   }
 }
-//size
+// size
 .btn-size-lg {
   @include button-size($btn-padding-x-lg, $btn-padding-y-lg, $btn-font-size-lg, $border-radius-lg);
 }
@@ -30,7 +30,7 @@
 .btn-size-default {
   @include button-size($btn-padding-x, $btn-padding-y, $btn-font-size, $border-radius);
 }
-//type
+// type
 @each $key, $val in $theme-colors {
   .btn-type-#{$key} {
     @include button-style(nth($val, 1), nth($val, 2));
