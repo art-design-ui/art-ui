@@ -1,5 +1,5 @@
 //中性色板
-$white:   #ffffff !default;
+$white:   #fff !default;
 $gray-1:  #fafafa !default;
 $gray-2:  #f5f5f5 !default;
 $gray-3:  #f0f0f0 !default;
@@ -9,7 +9,7 @@ $gray-6:  #8c8c8c !default;
 $gray-7:  #595959 !default;
 $gray-8:  #434343 !default;
 $gray-9:  #262626 !default;
-$black:   #000000 !default;
+$black:   #000 !default;
 
 //主色色板
 $red:     #ff4d4f !default;
@@ -27,34 +27,34 @@ $pink:    #f759ab !default;
 
 
 //主题色
-$primary:       $blue     !default;
-$secondary:     $gray-6   !default;
-$success:       $green    !default;
-$info:          $cyan     !default;
-$warning:       $yellow   !default;
-$danger:        $red      !default;
-$light:         $gray-1   !default;
-$dark:          $gray-8   !default;
+$primary:       $blue !default;
+$secondary:     $gray-6 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-1 !default;
+$dark:          $gray-8 !default;
 
 
-$neu-whiteshadow1:#d9d9d9;
-$neu-whiteshadow2:#ffffff;
-$neu-blueshadow1:#3690d9;
-$neu-blueshadow2:#4ac2ff;
-$neu-infoshadow1:#2eb0ab;
-$neu-infoshadow2:#3eeee7;
+$neu-whiteshadow1: #d9d9d9;
+$neu-whiteshadow2: #fff;
+$neu-blueshadow1: #3690d9;
+$neu-blueshadow2: #4ac2ff;
+$neu-infoshadow1: #2eb0ab;
+$neu-infoshadow2: #3eeee7;
 
 
 $theme-colors: 
-(//type         //背景色    //文字色  //neushadow1 2
-  "default":    ($white,$gray-7, #d9d9d9,#ffffff),
+  (//type         //背景色    //文字色  //neushadow1 2
+  "default":    ($white,$gray-7, #d9d9d9,#fff),
   "primary":    ($primary,$white,#3690d9,#4ac2ff),
-  "secondary":  ($secondary,$white,#777777,#a1a1a1),
+  "secondary":  ($secondary,$white,#7777,#a1a1a1),
   "success":    ($success,$white,#62b234,#84f046),
   "info":       ($info,$white,#2eb0ab,#3eeee7),
   "warning":    ($warning,$gray-7,#d9c934,#ffff46),
   "danger":     ($danger,$white,#c33b3c,#ff595b),
-  "light":      ($light,$gray-7,#d5d5d5, #ffffff),
+  "light":      ($light,$gray-7,#d5d5d5, #fff),
   "dark":       ($dark,$white,#393939,#4d4d4d)
 );
 
@@ -68,15 +68,15 @@ $html-selector: html;
 
 
 //字体
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // 字体大小
 $font-size-base:              16px !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
-$font-size-sm:                $font-size-base * .875 !default;
-$font-variant-base:           tabular-nums  !default;
-$font-feature-settings-base:  'tnum'        !default ;
+$font-size-sm:                $font-size-base * 0.875 !default;
+$font-variant-base:           tabular-nums !default;
+$font-feature-settings-base: "tnum" !default;
 // 字重
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
@@ -145,9 +145,9 @@ $display-line-height:         $headings-line-height !default;
 $lead-font-size:              $font-size-base * 1.25 !default;
 $lead-font-weight:            300 !default;
 
-$small-font-size:             .875em !default;
+$small-font-size:             0.875em !default;
 
-$sub-sup-font-size:           .75em !default;
+$sub-sup-font-size:           0.75em !default;
 
 $text-muted:                  $gray-6 !default;
 
@@ -159,13 +159,13 @@ $blockquote-font-size:        $font-size-base * 1.25 !default;
 
 $hr-color:                    inherit !default;
 $hr-height:                   1px !default;
-$hr-opacity:                  .25 !default;
+$hr-opacity:                  0.25 !default;
 
 $legend-margin-bottom:        8px !default;
 $legend-font-size:            24px !default;
 $legend-font-weight:          null !default;
 
-$mark-padding:                .2em !default;
+$mark-padding:                0.2em !default;
 
 $dt-font-weight:              $font-weight-bold !default;
 
@@ -196,10 +196,10 @@ $border-radius-lg:            5px !default;
 $border-radius-sm:            3px !default;
 
 // 不同类型的 box shadow
-$box-shadow-sm:               0 2px 4px rgba($black, .075) !default;
-$box-shadow:                  0 8px 16px rgba($black, .15) !default;
-$box-shadow-lg:               0 16px 48px rgba($black, .175) !default;
-$box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
+$box-shadow-sm:               0 2px 4px rgba($black, 0.075) !default;
+$box-shadow:                  0 8px 16px rgba($black, 0.15) !default;
+$box-shadow-lg:               0 16px 48px rgba($black, 0.175) !default;
+$box-shadow-inset:            inset 0 1px 2px rgba($black, 0.075) !default;
 
 // 按钮
 // 按钮基本属性
@@ -220,14 +220,14 @@ $btn-padding-x-lg:            12px !default;
 $btn-font-size-lg:            $font-size-lg !default;
 
 $btn-neu-normal:              2px !default;
-$btn-neu-large :              4px !default;
-$btn-neu-small :              1px !default;
+$btn-neu-large:              4px !default;
+$btn-neu-small:              1px !default;
 // 按钮边框
 $btn-border-width:            $border-width !default;
 
 // 按钮其他
-$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
-$btn-disabled-opacity:        .65 !default;
+$btn-box-shadow:              inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$btn-disabled-opacity:        0.65 !default;
 
 
 // 链接按钮
@@ -241,4 +241,4 @@ $btn-border-radius:           $border-radius !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 
-$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$btn-transition:              color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;

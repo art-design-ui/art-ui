@@ -1,6 +1,5 @@
 module.exports = {
   extends: [
-    'airbnb',
     'prettier',
     'plugin:jest/recommended',
     'plugin:react/recommended',

@@ -8,7 +8,6 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-a11y',
-    '@storybook/addon-storysource',
     '@storybook/addon-essentials',
     {
       name: '@storybook/addon-docs',
@@ -30,8 +29,8 @@ module.exports = {
               },
               compress: {
                 ecma: 5,
-                warnings: false,
-                comparisons: false,
+                warnings: true,
+                comparisons: true,
                 inline: 2,
               },
               mangle: {
@@ -39,7 +38,7 @@ module.exports = {
               },
               output: {
                 ecma: 5,
-                comments: false,
+                comments: true,
                 ascii_only: true,
               },
             },
@@ -51,7 +50,7 @@ module.exports = {
     }
     config.optimization = {
       minimizer: tser,
-      minimize: isprod ? true : false,
+      minimize: isprod ? true : true,
       splitChunks: {
         chunks: 'all',
         maxSize: maxAssetSize,
@@ -87,7 +86,7 @@ module.exports = {
       },
     })
     const isprod = config.mode === 'production'
-    isprod ? (config.devtool = 'none') : null
+    isprod ? (config.devtool = 'none') : (config.devtool = 'none')
 
     let tser = isprod ? config.optimization.minimizer : []
 

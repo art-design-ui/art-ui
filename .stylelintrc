@@ -1,13 +1,17 @@
 {
-    "extends": [
-     "stylelint-config-recommended"
+   "extends": [
+     "stylelint-config-sass-guidelines"
     ],
     "rules": {
-      "comment-empty-line-before": null,
-      "function-name-case": ["lower", { "ignoreFunctions": ["/colorPalette/"] }],
-      "no-invalid-double-slash-comments": null,
-      "no-descending-specificity": null,
-      "declaration-empty-line-before": null
+      "rule-empty-line-before":"never",
+      "declaration-colon-space-after":"never",
+      "at-rule-no-unknown":null,
+      "scss/dollar-variable-colon-space-after": "at-least-one-space",
+      "declaration-bang-space-before":"always",
+      "string-quotes":"double",
+      "order/properties-alphabetical-order": null,
+      "order/order":null,
+      "max-nesting-depth":null
     },
-    "ignoreFiles": ["node_modules/**/*"]
+    "ignoreFiles": ["node_modules/**/*","src/styles/_reboot.scss"]
   }

@@ -1,7 +1,7 @@
 import '../src/styles/index.scss'
-import { create } from '@storybook/theming'
-import { addParameters, configure } from '@storybook/react'
+import { addDecorator, addParameters, configure } from '@storybook/react'
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks'
+import { withA11y } from '@storybook/addon-a11y'
 addParameters({
   docs: {
     container: DocsContainer,
@@ -17,6 +17,8 @@ addParameters({
     hideEmpty: true,
   },
 })
+addDecorator(withA11y)
+
 const loaderFn = () => {
   const allExports = [
     require('../src/stories/art.stories.mdx'),
