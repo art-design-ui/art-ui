@@ -1,6 +1,6 @@
-import React, { PropsWithChildren, CSSProperties } from 'react'
+/* eslint-disable react/destructuring-assignment */
+import React, { useState, PropsWithChildren, CSSProperties } from 'react'
 import Button from './button'
-import { useState } from 'react'
 
 function NeuWdown(props: PropsWithChildren<{ callback: () => void; style?: CSSProperties }>) {
   const [state, setState] = useState(false)

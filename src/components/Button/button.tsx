@@ -65,13 +65,12 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
         {children}
       </a>
     )
-  } else {
-    return (
-      <button className={classes} disabled={disabled} {...restProps} ref={btnRef}>
-        {children}
-      </button>
-    )
   }
+  return (
+    <button className={classes} disabled={disabled} {...restProps} ref={btnRef}>
+      {children}
+    </button>
+  )
 }
 
 Button.defaultProps = {

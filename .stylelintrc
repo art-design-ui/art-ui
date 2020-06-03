@@ -13,5 +13,5 @@
       "order/order":null,
       "max-nesting-depth":null
     },
-    "ignoreFiles": ["node_modules/**/*","src/styles/_reboot.scss"]
+    "ignoreFiles": ["node_modules/**/*","src/styles/**"]
   }
