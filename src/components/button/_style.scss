@@ -1,0 +1,114 @@
+.btn {
+  color:$body-color;
+  display:inline-block;
+  font-weight:$btn-font-weight;
+  line-height:$btn-line-height;
+  background-image:none;
+  position:relative;
+  text-align:center;
+  vertical-align:middle;
+  border:$btn-border-width solid transparent;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:$btn-transition;
+  @include button-size($btn-padding-x, $btn-padding-y, $btn-font-size, $border-radius);
+  &[disabled] {
+    cursor:not-allowed;
+    opacity:$btn-disabled-opacity;
+    > * {
+      pointer-events:none;
+    }
+  }
+}
+// size
+.btn-size-lg {
+  @include button-size($btn-padding-x-lg, $btn-padding-y-lg, $btn-font-size-lg, $border-radius-lg);
+}
+.btn-size-sm {
+  @include button-size($btn-padding-x-sm, $btn-padding-y-sm, $btn-font-size-sm, $border-radius-sm);
+}
+.btn-size-default {
+  @include button-size($btn-padding-x, $btn-padding-y, $btn-font-size, $border-radius);
+}
+// type
+@each $key, $val in $theme-colors {
+  .btn-type-#{$key} {
+    @include button-style(nth($val, 1), nth($val, 2));
+    @include neufactory(nth($val, 1), nth($val, 3), nth($val, 4));
+  }
+}
+.btn-type-link {
+  font-weight:$font-weight-base;
+  color:$btn-link-color;
+  text-decoration:$link-decoration;
+  box-shadow:none;
+  border:1px dashed lighten($btn-link-color, 10%);
+  @include neufactory($white, $neu-whiteshadow1, $neu-whiteshadow2);
+  &:hover {
+    color:$btn-link-hover-color;
+    text-decoration:$link-hover-decoration;
+  }
+  &:focus {
+    text-decoration:$link-hover-decoration;
+  }
+  &.disabled {
+    color:$btn-link-disabled-color;
+    pointer-events:none;
+  }
+}
+.btn-type-neu-w-up {
+  font-weight:$font-weight-bold;
+  color:$gray-9;
+  @include neu-white($btn-neu-normal);
+  &:hover {
+    outline:none;
+  }
+  &:focus {
+    outline:none;
+  }
+  &.disabled {
+    pointer-events:none;
+  }
+}
+.btn-type-neu-w-down {
+  font-weight:$font-weight-bold;
+  color:$gray-9;
+  @include neu-white-down($btn-neu-normal);
+  &:hover {
+    outline:none;
+  }
+  &:focus {
+    outline:none;
+  }
+  &.disabled {
+    pointer-events:none;
+  }
+}
+.btn-type-neu-w-co {
+  font-weight:$font-weight-bold;
+  color:$gray-9;
+  @include neu-white-co($btn-neu-normal);
+  &:hover {
+    outline:none;
+  }
+  &:focus {
+    outline:none;
+  }
+  &.disabled {
+    pointer-events:none;
+  }
+}
+.btn-type-neu-w-fl {
+  font-weight:$font-weight-bold;
+  color:$gray-9;
+  @include neu-white-fl($btn-neu-normal);
+  &:hover {
+    outline:none;
+  }
+  &:focus {
+    outline:none;
+  }
+  &.disabled {
+    pointer-events:none;
+  }
+}
