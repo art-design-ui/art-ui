@@ -1,13 +1,51 @@
-## Art UI
+# Art
 
-> 作为前端 UI 组件库，从样式角度去看，应当满足两方面要求：一致性和可定制[1]。
+[![npm version](https://img.shields.io/david/dev/ant-design/ant-design?style=flat-square)]()
 
-统一视觉样式色彩布局字体图标
+`Art` 是模仿 `antd` 的组件库，主要满足个人造轮子的心愿
 
-统一交互动效时长、缓动移动路径形变、编排
+## Feature
 
-### 色彩系统
+- 📕 详细的文档与介绍
+- 🎨 使用富有特色的 Neumorphism 拟物化风格
+- 📦 开箱即用的高质量 React 组件
+- 🔥 使用 TypeScript 开发，提供完整的类型定义文件
 
-系统色板 - 基础色板+中性色板
+## Install
 
-产品色板 - 品牌色+功能色板
+```
+$ npm install Art
+```
+
+## Usage
+
+```tsx
+import { EmojiPanel } from ’Art'
+
+ReactDOM.render(
+  <EmojiPanel>
+    <span className="emoji-btn">点击添加表情</span>
+  </EmojiPanel>,
+  mountNode
+)
+```
+
+## Test
+
+#### 所有用例
+
+```
+yarn test
+```
+
+#### 指定目录
+
+```
+yarn test components/emoji-panel
+```
+
+#### 更新快照
+
+```
+yarn test components/emoji-panel --updateSnapshot
+```
