@@ -40,7 +40,7 @@
     "test:nowatch": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public --docs",
-    "site": "start-storybook -p 8080 -s public",
+    "dev": "start-storybook -p 8080 -s public",
     "build-storybook": "build-storybook --no-dll --quiet --docs",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
