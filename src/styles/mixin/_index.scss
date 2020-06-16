@@ -2,6 +2,20 @@
 @import "./size.scss";
 @import "./animatemixin.scss";
 
+@mixin utils-user-select($value) { // 控制用户能否选中文本
+    -moz-user-select: $value;
+    -webkit-user-select: $value;
+    -ms-user-select: $value;
+}
+
+@mixin background-mix($main-color, $auxiliary-color, $scale) { // 混合背景色用于颜色色淡化配合
+    background: mix($main-color, $auxiliary-color, $scale);
+}
+
+@mixin border-mix($main-color, $auxiliary-color, $scale) {  // 混合边框色用于颜色色淡化配合
+    border:1px solid mix($main-color, $auxiliary-color, $scale);
+}
+
 //button
 @mixin button-size($btn-padding-x,$btn-padding-y,$font-size-base,$border-radius) {
     padding: $btn-padding-y $btn-padding-x  $btn-padding-y $btn-padding-x;
@@ -61,15 +75,12 @@
 
 }
 
-
-
 @mixin neufactory-noactive($background,$shadow1,$shadow2) {
     background: $background;
     box-shadow:  $btn-neu-normal $btn-neu-normal $btn-neu-normal*2 $shadow1;
     border:none;
     text-shadow: 1px 1px 4px $shadow1, -1px -1px 4px $shadow2;
 }
-
 
 @mixin neu-white ($btn-neu-normal){
     text-shadow: 1px 1px 4px #ffffff, -1px -1px 4px #d9d9d9;
@@ -112,11 +123,21 @@
     inset (-$btn-neu-normal)  (-$btn-neu-normal)  $btn-neu-normal*2 $shadow2
 }
 
-
-
 @mixin switch-neu($bgcolor,$shadow1,$shadow2){
     background:$bgcolor;
     box-shadow: inset $btn-neu-normal $btn-neu-normal $btn-neu-normal*2 $shadow1, 
     inset (-$btn-neu-normal)  (-$btn-neu-normal)  $btn-neu-normal*2 $shadow2,
     $btn-neu-normal $btn-neu-normal $btn-neu-normal*2 $shadow1;
+}
+
+// tag
+@mixin tag-type($main-color, $auxiliary-color) { // 控制用户能否选中文本
+    color: $main-color;
+    @include border-mix($main-color, $auxiliary-color, 50%);
+    @include background-mix($main-color, $auxiliary-color, 20%);
+}
+
+@mixin tag-size($padding-vertical, $padding-horizontal, $font-size) {
+    font-size: $font-size;
+    padding: $padding-vertical $padding-horizontal;
 }

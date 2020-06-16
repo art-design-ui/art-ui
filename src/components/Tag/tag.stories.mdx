@@ -1,0 +1,35 @@
+import { Meta, Story, Props ,Preview } from '@storybook/addon-docs/blocks';
+import Tag from './tag';
+
+<Meta title='组件 |Tag ' component={Tag} />
+
+<br/>
+
+# Tag 标签
+<br/>
+
+## 标签类型 Type
+
+<Preview >
+  <Story name='标签类型'>
+   <div>
+      <Tag type='primary'>标签一</Tag>
+      <Tag type='danger'>标签二</Tag>
+      <Tag type='warning'>标签三</Tag>
+      <Tag type='info'>标签四</Tag>
+      <Tag type='success'>标签五</Tag>
+   </div>
+  </Story>
+</Preview>
+
+## 标签尺寸 Size
+
+<Preview >
+  <Story name='Tag尺寸'>
+   <div>
+      <Tag size='sm' >标签一</Tag>
+      <Tag size='default'>标签二</Tag>
+      <Tag size='lg'>标签三</Tag>
+   </div>
+  </Story>
+</Preview>
