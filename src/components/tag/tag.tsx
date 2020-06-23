@@ -21,9 +21,9 @@ export type TagProps = HTMLAttributes<HTMLSpanElement> & BaseTagProps
 
 export const Tag: FC<TagProps> = (props: TagProps) => {
   const { size, type, children, refcallback, className, ...restProps } = props
-  const classes = classNames('art-ui-tag', className, {
-    [`art-ui-tag-type-${type}`]: type,
-    [`art-ui-tag-size-${size}`]: size,
+  const classes = classNames('art-tag', className, {
+    [`art-tag-type-${type}`]: type,
+    [`art-tag-size-${size}`]: size,
   })
   const tagRef = useRef(null)
   useEffect(() => {
