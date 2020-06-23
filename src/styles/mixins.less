@@ -1,72 +1,144 @@
-.button-size(@padding-y, @padding-x, @font-size, @border-raduis) {
-    padding: @padding-y @padding-x;
-    font-size: @font-size;
-    border-radius: @border-raduis;
-  }
+.utils-user-select(@value) { // 控制用户能否选中文本
+  -moz-user-select: @value;
+  -webkit-user-select: @value;
+  -ms-user-select: @value;
+}
 
-  .button-style(
-    @background,
-    @border,
-    @color,
-    @hover-background: lighten(@background, 7.5%),
-    @hover-border: lighten(@border, 10%),
-    @hover-color: @color,
-  ) {
-    color: @color;
-    background: @background;
-    border-color: @border;
-    &:hover {
+.background-mix(@main-color, @auxiliary-color, @scale) { // 混合背景色用于颜色色淡化配合
+  background: mix(@main-color, @auxiliary-color, @scale);
+}
+
+.border-mix(@main-color, @auxiliary-color, @scale) {  // 混合边框色用于颜色色淡化配合
+  border: 1px solid mix(@main-color, @auxiliary-color, @scale);
+}
+
+//button
+.button-size(@btn-padding-x,@btn-padding-y,@font-size-base,@border-radius) {
+  padding: @btn-padding-y @btn-padding-x  @btn-padding-y @btn-padding-x;
+  font-size: @font-size-base;
+  border-radius: @border-radius;
+}
+
+.button-style(
+  @background-color,@color,@border-color:lighten(@color,10%),
+  @hover-background-color:lighten(@background-color,7.5%),
+  @hover-border-color:lighten(@border-color,10%),
+  @hover-color:@color) {
+  color: @color;
+  background-color: @background-color;
+  &:hover {
       color: @hover-color;
-      background: @hover-background;
-      border-color: @hover-border;
-    }
-    &:focus,
-    &.focus {
+      background-color: @hover-background-color;
+  }
+  &:focus {
       color: @hover-color;
-      background: @hover-background;
-      border-color: @hover-border;
-    }
-    &:disabled,
-    &.disabled {
+      background-color: @hover-background-color;
+  }
+  &[disabled] {
       color: @color;
+      background-color: @background-color;
+      border-color: @border-color;
+  }
+}
+
+.neufactory(@background,@shadow1,@shadow2) {
+  background: @background;
+  box-shadow: @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 @shadow1;
+  border: none;
+  text-shadow: 1px 1px 4px @shadow1, -1px -1px 4px @shadow2;
+  &:active {
       background: @background;
-      border-color: @border;
-    }
+      border: none;
+      box-shadow:
+ inset @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 @shadow1,
+      inset (-@btn-neu-normal)  (-@btn-neu-normal)  @btn-neu-normal*2 @shadow2;
   }
+}
+.neufactory-hover(@background,@shadow1,@shadow2) {
+  &:hover {
+      background: @background;
+      box-shadow: @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 @shadow1;
+      border: none;
+      text-shadow: 1px 1px 4px @shadow1, -1px -1px 4px @shadow2;
+  }
+  &:active {
+      background: @background;
+      border: none;
+      box-shadow:
+ inset @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 @shadow1,
+      inset (-@btn-neu-normal)  (-@btn-neu-normal)  @btn-neu-normal*2 @shadow2;
+  }
+}
 
-  .zoom-animation(
-    @direction: 'top',
-    @scaleStart: scaleY(0),
-    @scaleEnd: scaleY(1),
-    @origin: center top,
-  ) {
-    .zoom-in-@{direction}-enter {
-      opacity: 0;
-      transform: @scaleStart;
-    }
-    .zoom-in-@{direction}-enter-active {
-      opacity: 1;
-      transform: @scaleEnd;
-      transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
-      transform-origin: @origin;
-    }
-    .zoom-in-@{direction}-exit {
-      opacity: 1;
-    }
-    .zoom-in-@{direction}-exit-active {
-      opacity: 0;
-      transform: @scaleStart;
-      transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
-      transform-origin: @origin;
-    }
-  }
+.neufactory-noactive(@background,@shadow1,@shadow2) {
+  background: @background;
+  box-shadow: @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 @shadow1;
+  border: none;
+  text-shadow: 1px 1px 4px @shadow1, -1px -1px 4px @shadow2;
+}
 
-  .border-right-radius(@raduis) {
-    border-top-right-radius: @raduis;
-    border-bottom-right-radius: @raduis;
-  }
+.neu-white (@btn-neu-normal) {
+  text-shadow: 1px 1px 4px #fff, -1px -1px 4px #d9d9d9;
+  background: linear-gradient(145deg, #e6e6e6, #fff);
+  box-shadow:
+ @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 #d6d6d6,
+  -(@btn-neu-normal) -(@btn-neu-normal) @btn-neu-normal*2 #fff;
+}
+.neu-white-down (@btn-neu-normal) {
+  text-shadow: 1px 1px 4px #fff, -1px -1px 4px #d9d9d9;
+  background: white;
+  box-shadow:
+ inset @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 #d6d6d6,
+  inset (-@btn-neu-normal)  (-@btn-neu-normal)  @btn-neu-normal*2 #fff;
+}
+.neu-white-co(@btn-neu-normal) {
+  text-shadow: 1px 1px 4px #fff, -1px -1px 4px #d9d9d9;
+  background: linear-gradient(145deg, #fff, #e6e6e6);
+  box-shadow:
+  @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 #d6d6d6,
+   (-@btn-neu-normal)  (-@btn-neu-normal)  @btn-neu-normal*2 #fff;
+}
+.neu-white-fl(@btn-neu-normal) {
+  text-shadow: 1px 1px 4px #fff, -1px -1px 4px #d9d9d9;
+  background: white;
+  box-shadow:
+  @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 #d6d6d6,
+   (-@btn-neu-normal)  (-@btn-neu-normal)  @btn-neu-normal*2 #fff;
+}
+.neu-white-ringafter(@btn-neu-normal,@btn-border-radius) {
+ position: absolute;
+ content: '';
+ left: -10%;
+ width: 120%;
+ height: 120%;
+ top: -10%;
+  opacity: 80%;
+  z-index: 1;
+ .neu-white-fl(@btn-neu-normal);
+}
+.ringwrapper (@bgcolor,@shadow1,@shadow2) {
+  background: @bgcolor;
+  box-shadow:
+ inset @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 @shadow1,
+  inset (-@btn-neu-normal)  (-@btn-neu-normal)  @btn-neu-normal*2 @shadow2;
+}
 
-  .border-left-radius(@raduis) {
-    border-top-left-radius: @raduis;
-    border-bottom-left-radius: @raduis;
-  }
+.switch-neu(@bgcolor,@shadow1,@shadow2) {
+  background: @bgcolor;
+  box-shadow:
+ inset @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 @shadow1,
+  inset (-@btn-neu-normal)  (-@btn-neu-normal)  @btn-neu-normal*2 @shadow2,
+  @btn-neu-normal @btn-neu-normal @btn-neu-normal*2 @shadow1;
+}
+
+// tag
+.tag-type(@main-color, @auxiliary-color) { // 控制用户能否选中文本
+  color: @main-color;
+  .border-mix(@main-color, @auxiliary-color, 50%);
+  .background-mix(@main-color, @auxiliary-color, 20%);
+}
+
+.tag-size(@padding-vertical, @padding-horizontal, @font-size) {
+  font-size: @font-size;
+  padding: @padding-vertical @padding-horizontal;
+}
