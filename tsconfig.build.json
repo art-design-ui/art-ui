@@ -1,18 +1,5 @@
 {
-    "compilerOptions": {
-        "outDir": "dist",
-        "target": "es5",
-        "module": "esnext",
-        "declaration": true,
-        "jsx": "react",
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true
-    },
-    "include": [
-        "src"
-    ],
-    "exclude": [
-        "src/**/*.stories.tsx",
-        "src/**/*.test.tsx"
-    ]
+    "extends": "./tsconfig.json",
+    "compilerOptions": { "emitDeclarationOnly": true },
+    "exclude": ["**/__tests__/**","**/demo/**","node_modules","lib","es"]
 }

@@ -2,20 +2,14 @@ const TerserPlugin = require('terser-webpack-plugin')
 let maxAssetSize = 1024 * 1024
 let minSize = 30000
 module.exports = {
-  stories: ['../src/**/*.stories.(tsx|mdx)'],
+  stories: ['../src/**/*.stories.(mdx)'],
   addons: [
-    '@storybook/preset-create-react-app',
-    '@storybook/addon-actions',
-    '@storybook/addon-links',
-    '@storybook/addon-a11y',
-    '@storybook/addon-essentials',
     {
       name: '@storybook/addon-docs',
       options: {
         configureJSX: true,
       },
     },
-    '@storybook/addon-viewport/register',
   ],
   managerWebpack: async config => {
     config.optimization.splitChunks = { chunks: 'all', maxSize: maxAssetSize }
@@ -65,6 +59,9 @@ module.exports = {
       test: /\.(ts|tsx)$/,
       use: [
         {
+          loader: 'babel-loader',
+        },
+        {
           loader: require.resolve('react-docgen-typescript-loader'),
           options: {
             shouldExtractLiteralValuesFromEnum: true,
@@ -75,6 +72,20 @@ module.exports = {
               return true
             },
           },
+        },
+      ],
+    })
+    config.module.rules.push({
+      test: /\.less$/,
+      use: [
+        {
+          loader: 'style-loader',
+        },
+        {
+          loader: 'css-loader',
+        },
+        {
+          loader: 'less-loader',
         },
       ],
     })

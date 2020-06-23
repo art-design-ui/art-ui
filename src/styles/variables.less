@@ -1,0 +1,231 @@
+//中性色板
+@white:   #fff;
+@gray-1:  #fafafa;
+@gray-2:  #f5f5f5;
+@gray-3:  #f0f0f0;
+@gray-4:  #d9d9d9;
+@gray-5:  #bfbfbf;
+@gray-6:  #8c8c8c;
+@gray-7:  #595959;
+@gray-8:  #434343;
+@gray-9:  #262626;
+@black:   #000;
+
+//主色色板
+@red:     #ff4d4f;
+@volcano: #ff7a45;
+@orange:  #ffa940;
+@gold:    #ffc53d;
+@yellow:  #ffec3d;
+@lime:    #bae637;
+@green:   #73d13d;
+@cyan:    #36cfc9;
+@blue:    #40a9ff;
+@gblue:   #597ef7;
+@purple:  #9254de;
+@pink:    #f759ab;
+
+
+//主题色
+@primary:       @blue;
+@secondary:     @gray-6;
+@success:       @green;
+@info:          @cyan;
+@warning:       @yellow;
+@danger:        @red;
+@light:         @gray-1;
+@dark:          @gray-8;
+
+
+@neu-whiteshadow1: #d9d9d9;
+@neu-whiteshadow2: #fff;
+@neu-blueshadow1: #3690d9;
+@neu-blueshadow2: #4ac2ff;
+@neu-infoshadow1: #2eb0ab;
+@neu-infoshadow2: #3eeee7;
+
+
+
+
+
+@theme: light;
+@bear-fix: bear;
+@html-selector: html;
+
+
+
+//字体
+@font-family-sans-serif:      -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+@font-family-base:            @font-family-sans-serif;
+// 字体大小
+@font-size-base:              16px; // Assumes the browser default, typically `16px`
+@font-size-lg:                @font-size-base * 1.25;
+@font-size-sm:                @font-size-base * 0.875;
+@font-variant-base:           tabular-nums;
+@font-feature-settings-base: "tnum";
+// 字重
+@font-weight-lighter:         lighter;
+@font-weight-light:           300;
+@font-weight-normal:          400;
+@font-weight-bold:            700;
+@font-weight-bolder:          bolder;
+@font-weight-base:            @font-weight-normal;
+
+// 行高
+@line-height-base:            1.5;
+@line-height-lg:              2;
+@line-height-sm:              1.25;
+
+// 标题大小
+@h1-font-size:                @font-size-base * 2.5;
+@h2-font-size:                @font-size-base * 2;
+@h3-font-size:                @font-size-base * 1.75;
+@h4-font-size:                @font-size-base * 1.5;
+@h5-font-size:                @font-size-base * 1.25;
+@h6-font-size:                @font-size-base;
+
+// 链接
+@link-color:                              @primary;
+@link-decoration:                         none;
+@link-hover-color:                        darken(@link-color, 15%);
+@link-hover-decoration:                   underline;
+
+// body
+@body-bg:                   @white;
+@body-color:                @gray-9;
+@body-text-align:           null;
+
+// Spacing
+@spacer: 16px;
+
+@headings-margin-bottom:      @spacer / 2;
+@headings-font-family:        null;
+@headings-font-style:         null;
+@headings-font-weight:        500;
+@headings-line-height:        1.2;
+@headings-color:              null;
+
+// Paragraphs
+
+@paragraph-margin-bottom:   16px;
+
+// 字体其他部分 heading list hr 等等
+@headings-margin-bottom:      @spacer / 2;
+@headings-font-family:        null;
+@headings-font-style:         null;
+@headings-font-weight:        500;
+@headings-line-height:        1.2;
+@headings-color:              null;
+
+@display1-size:               96px;
+@display2-size:               88px;
+@display3-size:               72px;
+@display4-size:               56px;
+
+@display1-weight:             300;
+@display2-weight:             300;
+@display3-weight:             300;
+@display4-weight:             300;
+@display-line-height:         @headings-line-height;
+
+@lead-font-size:              @font-size-base * 1.25;
+@lead-font-weight:            300;
+
+@small-font-size:             0.875em;
+
+@sub-sup-font-size:           0.75em;
+
+@text-muted:                  @gray-6;
+
+@initialism-font-size:        @small-font-size;
+
+@blockquote-small-color:      @gray-6;
+@blockquote-small-font-size:  @small-font-size;
+@blockquote-font-size:        @font-size-base * 1.25;
+
+@hr-color:                    inherit;
+@hr-height:                   1px;
+@hr-opacity:                  0.25;
+
+@legend-margin-bottom:        8px;
+@legend-font-size:            24px;
+@legend-font-weight:          null;
+
+@mark-padding:                0.2em;
+
+@dt-font-weight:              @font-weight-bold;
+
+@nested-kbd-font-weight:      @font-weight-bold;
+
+@list-inline-padding:         8px;
+
+@mark-bg:                     #fcf8e3;
+
+@hr-margin-y:                 @spacer;
+
+// Code
+
+@code-font-size:                    @small-font-size;
+@code-color:                        @pink;
+@pre-color:                         null;
+
+// options 可配置选项
+@enable-pointer-cursor-for-buttons:           true;
+
+// 边框 和 border radius
+
+@border-width:                1px;
+@border-color:                @gray-3;
+
+@border-radius:               4px;
+@border-radius-lg:            5px;
+@border-radius-sm:            3px;
+
+// 不同类型的 box shadow
+@box-shadow-sm:               0 2px 4px fade(@black, (0.075*100));
+@box-shadow:                  0 8px 16px fade(@black, (0.15*100));
+@box-shadow-lg:               0 16px 48px fade(@black, (0.175*100));
+@box-shadow-inset:            inset 0 1px 2px fade(@black, (0.075*100));
+
+// 按钮
+// 按钮基本属性
+@btn-font-weight:             500;
+@btn-padding-y:               4px;
+@btn-padding-x:               8px;
+@btn-font-family:             @font-family-base;
+@btn-font-size:               @font-size-base;
+@btn-line-height:             @line-height-base;
+
+//不同大小按钮的 padding 和 font size
+@btn-padding-y-sm:            2px;
+@btn-padding-x-sm:            4px;
+@btn-font-size-sm:            @font-size-sm;
+
+@btn-padding-y-lg:            6px;
+@btn-padding-x-lg:            12px;
+@btn-font-size-lg:            @font-size-lg;
+
+@btn-neu-normal:              2px;
+@btn-neu-large:              4px;
+@btn-neu-small:              1px;
+// 按钮边框
+@btn-border-width:            @border-width;
+
+// 按钮其他
+@btn-box-shadow:              inset 0 1px 0 fade(@white, (0.15*100)), 0 1px 1px fade(@black, (0.075*100));
+@btn-disabled-opacity:        0.65;
+
+
+// 链接按钮
+@btn-link-color:              @link-color;
+@btn-link-hover-color:        @link-hover-color;
+@btn-link-disabled-color:     @gray-6;
+
+
+// 按钮 radius
+@btn-border-radius:           @border-radius;
+@btn-border-radius-lg:        @border-radius-lg;
+@btn-border-radius-sm:        @border-radius-sm;
+
+@btn-transition:              color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

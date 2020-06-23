@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
@@ -67,6 +68,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
     )
   }
   return (
+    // eslint-disable-next-line react/button-has-type
     <button className={classes} disabled={disabled} {...restProps} ref={btnRef}>
       {children}
     </button>
