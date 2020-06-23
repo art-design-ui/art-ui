@@ -1,69 +1,55 @@
-//中性色板
-@white:   #fff;
-@gray-1:  #fafafa;
-@gray-2:  #f5f5f5;
-@gray-3:  #f0f0f0;
-@gray-4:  #d9d9d9;
-@gray-5:  #bfbfbf;
-@gray-6:  #8c8c8c;
-@gray-7:  #595959;
-@gray-8:  #434343;
-@gray-9:  #262626;
-@black:   #000;
+@white:    #fff;
+@gray-100: #f8f9fa;
+@gray-200: #e9ecef;
+@gray-300: #dee2e6;
+@gray-400: #ced4da;
+@gray-500: #adb5bd;
+@gray-600: #6c757d;
+@gray-700: #495057;
+@gray-800: #343a40;
+@gray-900: #212529;
+@black:    #000;
 
-//主色色板
-@red:     #ff4d4f;
-@volcano: #ff7a45;
-@orange:  #ffa940;
-@gold:    #ffc53d;
-@yellow:  #ffec3d;
-@lime:    #bae637;
-@green:   #73d13d;
-@cyan:    #36cfc9;
-@blue:    #40a9ff;
-@gblue:   #597ef7;
-@purple:  #9254de;
-@pink:    #f759ab;
+@blue:    #0d6efd;
+@indigo:  #6610f2;
+@purple:  #6f42c1;
+@pink:    #d63384;
+@red:     #dc3545;
+@orange:  #fd7e14;
+@yellow:  #fadb14;
+@green:   #52c41a;
+@teal:    #20c997;
+@cyan:    #17a2b8;
 
-
-//主题色
 @primary:       @blue;
-@secondary:     @gray-6;
+@secondary:     @gray-600;
 @success:       @green;
 @info:          @cyan;
 @warning:       @yellow;
 @danger:        @red;
-@light:         @gray-1;
-@dark:          @gray-8;
+@light:         @gray-100;
+@dark:          @gray-800;
+
+@primary-colors: @primary;
+@secondary-colors: @secondary;
+@success-colors: @success;
+@info-colors: @info;
+@warning-colors: @warning;
+@danger-colors: @danger;
+@light-colors: @light;
+@dark-colors: @dark;
 
 
-@neu-whiteshadow1: #d9d9d9;
-@neu-whiteshadow2: #fff;
-@neu-blueshadow1: #3690d9;
-@neu-blueshadow2: #4ac2ff;
-@neu-infoshadow1: #2eb0ab;
-@neu-infoshadow2: #3eeee7;
-
-
-
-
-
-@theme: light;
-@bear-fix: bear;
-@html-selector: html;
-
-
-
-//字体
-@font-family-sans-serif:      -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 @font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 @font-family-base:            @font-family-sans-serif;
+
 // 字体大小
-@font-size-base:              16px; // Assumes the browser default, typically `16px`
+@font-size-base:              1rem; // Assumes the browser default, typically `16px`
 @font-size-lg:                @font-size-base * 1.25;
-@font-size-sm:                @font-size-base * 0.875;
-@font-variant-base:           tabular-nums;
-@font-feature-settings-base: "tnum";
+@font-size-sm:                @font-size-base * .875;
+@font-size-root:              null;
+
 // 字重
 @font-weight-lighter:         lighter;
 @font-weight-light:           300;
@@ -93,11 +79,11 @@
 
 // body
 @body-bg:                   @white;
-@body-color:                @gray-9;
+@body-color:                @gray-900;
 @body-text-align:           null;
 
 // Spacing
-@spacer: 16px;
+@spacer: 1rem;
 
 @headings-margin-bottom:      @spacer / 2;
 @headings-font-family:        null;
@@ -108,7 +94,7 @@
 
 // Paragraphs
 
-@paragraph-margin-bottom:   16px;
+@paragraph-margin-bottom:   1rem;
 
 // 字体其他部分 heading list hr 等等
 @headings-margin-bottom:      @spacer / 2;
@@ -118,10 +104,10 @@
 @headings-line-height:        1.2;
 @headings-color:              null;
 
-@display1-size:               96px;
-@display2-size:               88px;
-@display3-size:               72px;
-@display4-size:               56px;
+@display1-size:               6rem;
+@display2-size:               5.5rem;
+@display3-size:               4.5rem;
+@display4-size:               3.5rem;
 
 @display1-weight:             300;
 @display2-weight:             300;
@@ -132,33 +118,33 @@
 @lead-font-size:              @font-size-base * 1.25;
 @lead-font-weight:            300;
 
-@small-font-size:             0.875em;
+@small-font-size:             .875em;
 
-@sub-sup-font-size:           0.75em;
+@sub-sup-font-size:           .75em;
 
-@text-muted:                  @gray-6;
+@text-muted:                  @gray-600;
 
 @initialism-font-size:        @small-font-size;
 
-@blockquote-small-color:      @gray-6;
+@blockquote-small-color:      @gray-600;
 @blockquote-small-font-size:  @small-font-size;
 @blockquote-font-size:        @font-size-base * 1.25;
 
 @hr-color:                    inherit;
 @hr-height:                   1px;
-@hr-opacity:                  0.25;
+@hr-opacity:                  .25;
 
-@legend-margin-bottom:        8px;
-@legend-font-size:            24px;
+@legend-margin-bottom:        .5rem;
+@legend-font-size:            1.5rem;
 @legend-font-weight:          null;
 
-@mark-padding:                0.2em;
+@mark-padding:                .2em;
 
 @dt-font-weight:              @font-weight-bold;
 
 @nested-kbd-font-weight:      @font-weight-bold;
 
-@list-inline-padding:         8px;
+@list-inline-padding:         .5rem;
 
 @mark-bg:                     #fcf8e3;
 
@@ -176,51 +162,47 @@
 // 边框 和 border radius
 
 @border-width:                1px;
-@border-color:                @gray-3;
+@border-color:                @gray-300;
 
-@border-radius:               4px;
-@border-radius-lg:            5px;
-@border-radius-sm:            3px;
+@border-radius:               .25rem;
+@border-radius-lg:            .3rem;
+@border-radius-sm:            .2rem;
 
 // 不同类型的 box shadow
-@box-shadow-sm:               0 2px 4px fade(@black, (0.075*100));
-@box-shadow:                  0 8px 16px fade(@black, (0.15*100));
-@box-shadow-lg:               0 16px 48px fade(@black, (0.175*100));
-@box-shadow-inset:            inset 0 1px 2px fade(@black, (0.075*100));
+@box-shadow-sm:               0 .125rem .25rem fade(@black, (.075*100));
+@box-shadow:                  0 .5rem 1rem fade(@black, (.15*100));
+@box-shadow-lg:               0 1rem 3rem fade(@black, (.175*100));
+@box-shadow-inset:            inset 0 1px 2px fade(@black, (.075*100));
 
 // 按钮
 // 按钮基本属性
-@btn-font-weight:             500;
-@btn-padding-y:               4px;
-@btn-padding-x:               8px;
+@btn-font-weight:             400;
+@btn-padding-y:               .375rem;
+@btn-padding-x:               .75rem;
 @btn-font-family:             @font-family-base;
 @btn-font-size:               @font-size-base;
 @btn-line-height:             @line-height-base;
 
 //不同大小按钮的 padding 和 font size
-@btn-padding-y-sm:            2px;
-@btn-padding-x-sm:            4px;
+@btn-padding-y-sm:            .25rem;
+@btn-padding-x-sm:            .5rem;
 @btn-font-size-sm:            @font-size-sm;
 
-@btn-padding-y-lg:            6px;
-@btn-padding-x-lg:            12px;
+@btn-padding-y-lg:            .5rem;
+@btn-padding-x-lg:            1rem;
 @btn-font-size-lg:            @font-size-lg;
 
-@btn-neu-normal:              2px;
-@btn-neu-large:              4px;
-@btn-neu-small:              1px;
 // 按钮边框
 @btn-border-width:            @border-width;
 
 // 按钮其他
-@btn-box-shadow:              inset 0 1px 0 fade(@white, (0.15*100)), 0 1px 1px fade(@black, (0.075*100));
-@btn-disabled-opacity:        0.65;
-
+@btn-box-shadow:              inset 0 1px 0 fade(@white, (.15*100)), 0 1px 1px fade(@black, (.075*100));
+@btn-disabled-opacity:        .65;
 
 // 链接按钮
 @btn-link-color:              @link-color;
 @btn-link-hover-color:        @link-hover-color;
-@btn-link-disabled-color:     @gray-6;
+@btn-link-disabled-color:     @gray-600;
 
 
 // 按钮 radius
@@ -228,4 +210,77 @@
 @btn-border-radius-lg:        @border-radius-lg;
 @btn-border-radius-sm:        @border-radius-sm;
 
-@btn-transition:              color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+@btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// menu
+@menu-border-width:            @border-width;
+@menu-border-color:            @border-color;
+@menu-box-shadow:              inset 0 1px 0 fade(@white, (.15*100)), 0 1px 1px fade(@black, (.075*100));
+@menu-transition:              color .15s ease-in-out, border-color .15s ease-in-out;
+
+// menu-item
+@menu-item-padding-y:          .5rem;
+@menu-item-padding-x:          1rem;
+@menu-item-active-color:       @primary;
+@menu-item-active-border-width: 2px;
+@menu-item-disabled-color:     @gray-600;
+
+//sub-menu
+//submenu
+@submenu-box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+
+//input
+@input-padding-y:                       @btn-padding-y;
+@input-padding-x:                       @btn-padding-x;
+@input-font-family:                     @btn-font-family;
+@input-font-size:                       @btn-font-size;
+@input-font-weight:                     @font-weight-base;
+@input-line-height:                     @btn-line-height;
+
+@input-padding-y-sm:                    @btn-padding-y-sm;
+@input-padding-x-sm:                    @btn-padding-x-sm;
+@input-font-size-sm:                    @btn-font-size-sm;
+
+@input-padding-y-lg:                    @btn-padding-y-lg;
+@input-padding-x-lg:                    @btn-padding-x-lg;
+@input-font-size-lg:                    @btn-font-size-lg;
+
+@input-bg:                              @white;
+@input-disabled-bg:                     @gray-200;
+@input-disabled-border-color:           null;
+
+@input-color:                           @gray-700;
+@input-border-color:                    @gray-400;
+@input-border-width:                    @border-width;
+@input-box-shadow:                      @box-shadow-inset;
+
+@input-border-radius:                   @border-radius;
+@input-border-radius-lg:                @border-radius-lg;
+@input-border-radius-sm:                @border-radius-sm;
+
+@input-focus-bg:                        @input-bg;
+@input-focus-border-color:              lighten(@primary, 25%);
+@input-focus-width:                     .2rem;
+@input-focus-color:                     @input-color;
+@input-focus-shadow-color:              fade(@primary, (.25*100));
+@input-focus-box-shadow:                0 0 0 @input-focus-width @input-focus-shadow-color;
+
+@input-placeholder-color:               @gray-600;
+@input-plaintext-color:                 @body-color;
+
+@input-height-border:                   @input-border-width * 2;
+
+
+@input-transition:                      border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+@input-group-addon-color:               @input-color;
+@input-group-addon-bg:                  @gray-200;
+@input-group-addon-border-color:        @input-border-color;
+
+// Progress bars
+
+@progress-font-size:                @font-size-base * .75;
+@progress-bg:                       @gray-200;
+@progress-border-radius:            @border-radius;
+@progress-bar-color:                @white;
+@progress-bar-transition:           width .6s ease;

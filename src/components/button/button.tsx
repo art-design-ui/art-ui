@@ -1,75 +1,51 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, useEffect, useRef } from 'react'
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
 
-export type ButtonSize = 'lg' | 'sm' | 'default'
-export type ButtonType =
-  | 'primary'
-  | 'default'
-  | 'danger'
-  | 'secondary'
-  | 'success'
-  | 'info'
-  | 'light'
-  | 'warning'
-  | 'dark'
-  | 'link'
-  | 'neu-w-up'
-  | 'neu-w-down'
-  | 'neu-w-co'
-  | 'neu-w-fl'
+export type ButtonSize = 'lg' | 'sm'
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 
-export interface BaseButtonProps {
+interface BaseButtonProps {
   className?: string
+  /** 设置 Button 的禁用 */
   disabled?: boolean
-  /** 设置按钮大小 */
+  /** 设置 Button 的尺寸 */
   size?: ButtonSize
-  /**
-   * 设置按钮类型
-   */
+  /** 设置 Button 的类型 */
   btnType?: ButtonType
-  /** link类型才有效的url */
+  children: React.ReactNode
   href?: string
-  /** 回调ref，组件加载完成回调ref，返回值会在卸载组件时调用 */
-  refcallback?: (ref: any) => any
 }
-
-type NativeButtonProps = ButtonHTMLAttributes<HTMLElement> & BaseButtonProps
+type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
-
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
-
-export const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const { btnType, size, disabled, children, href, className, refcallback, ...restProps } = props
-
+/**
+ * 页面中最常用的的按钮元素，适合于完成特定的交互
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Button } from 'vikingship'
+ * ~~~
+ */
+export const Button: FC<ButtonProps> = props => {
+  const { btnType, className, disabled, size, children, href, ...restProps } = props
+  // btn, btn-lg, btn-primary
   const classes = classNames('btn', className, {
-    [`btn-type-${btnType}`]: btnType,
-    [`btn-size-${size}`]: size,
+    [`btn-${btnType}`]: btnType,
+    [`btn-${size}`]: size,
     disabled: btnType === 'link' && disabled,
   })
-  const btnRef = useRef(null)
-  useEffect(() => {
-    let uninstall: any = null
-    if (refcallback) {
-      uninstall = refcallback(btnRef)
-    }
-    return () => {
-      if (typeof uninstall === 'function') {
-        uninstall()
-      }
-    }
-  }, [refcallback])
-
-  if (btnType === 'link') {
+  if (btnType === 'link' && href) {
     return (
-      <a className={classes} href={href} {...restProps} ref={btnRef}>
+      <a className={classes} href={href} {...restProps}>
         {children}
       </a>
     )
   }
   return (
-    // eslint-disable-next-line react/button-has-type
-    <button className={classes} disabled={disabled} {...restProps} ref={btnRef}>
+    <button className={classes} disabled={disabled} {...restProps}>
       {children}
     </button>
   )
@@ -78,8 +54,6 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
 Button.defaultProps = {
   disabled: false,
   btnType: 'default',
-  size: 'default',
-  href: '/',
 }
 
 export default Button

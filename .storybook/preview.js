@@ -1,7 +1,6 @@
 import { addDecorator, addParameters, configure } from '@storybook/react'
 
 const { name, repository, version } = require('../package.json')
-
 //加载配置
 addParameters({
   options: {
