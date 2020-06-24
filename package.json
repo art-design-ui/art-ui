@@ -131,7 +131,7 @@
     "src/components/**/*.ts?(x)": [
       "prettier --write",
       "eslint --fix",
-      "jest --config jest.config.js",
+      "jest --config jest.config.js --passWithNoTests",
       "git add"
     ],
     "*.less": [
