@@ -18,5 +18,7 @@ module.exports = {
     'import/extensions': 0,
     'import/no-cycle': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    "import/no-named-as-default": 0,
+    "react/jsx-props-no-spreading": 0,
   },
 }

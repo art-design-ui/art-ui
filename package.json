@@ -1,7 +1,18 @@
 {
-  "name": "Art",
+  "name": "art",
   "version": "1.0.0",
-  "description": "art组件库",
+  "description": "art企业中台组件库",
+  "keywords": [
+    "ant",
+    "component",
+    "components",
+    "design",
+    "framework",
+    "frontend",
+    "react",
+    "react-component",
+    "ui"
+  ],
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
@@ -17,13 +28,15 @@
     "dev": "node build/dev-server.js",
     "docs": "start-storybook -p 8080",
     "build:docs": "build-storybook --no-dll --quiet --docs",
-    "test": "jest --config jest.config.js",
-    "gc": "git-cz",
-    "clean": "rimraf dist lib es",
-    "gulp": "cd build && gulp",
     "build:types": "tsc -p tsconfig.build.json && cpr lib es",
     "build:umd": "webpack --config build/webpack.prod.js --progress",
     "build": "yarn run clean && yarn run build:types && yarn run gulp && yarn run build:umd",
+    "test": "jest --config jest.config.js",
+    "gulp": "cd build && gulp",
+    "test:update": "jest --config jest.config.js --updateSnapshot",
+    "test:coverage":"jest --config jest.config.js --coverage",
+    "gc": "git-cz",
+    "clean": "rimraf dist lib es",
     "stylelint:fix": "stylelint './src/**/*.less' --syntax less --fix",
     "eslint:fix": "eslint  --color --fix ./src/components",
     "release": "ts-node ./scripts/release.ts"
@@ -33,11 +46,6 @@
     "es/**/style/*",
     "lib/**/style/*",
     "*.less"
-  ],
-  "keywords": [
-    "Component",
-    "UI",
-    "React"
   ],
   "author": "vnues",
   "license": "MIT",
@@ -61,7 +69,10 @@
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.2.5",
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "^10.4.1",
     "@types/classnames": "^2.2.10",
+    "@types/jest": "^26.0.0",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.8.2",
     "@types/semver": "^7.2.0",
@@ -72,7 +83,6 @@
     "clean-webpack-plugin": "^3.0.0",
     "commitizen": "^4.1.2",
     "cpr": "^3.0.1",
-    "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
     "cz-conventional-changelog": "^3.2.0",
     "eslint": "7.2.0",
@@ -118,9 +128,10 @@
     "webpack-progress-bar": "^1.2.1"
   },
   "lint-staged": {
-    "*.js": [
+    "components/**/*.ts?(x)": [
       "prettier --write",
       "eslint --fix",
+      "yarn run test",
       "git add"
     ],
     "components/**/*.less": [
@@ -131,8 +142,8 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"  
-    }
+      "pre-commit": "lint-staged"
+      }
   },
   "commitizen": {
     "path": "cz-conventional-changelog"
