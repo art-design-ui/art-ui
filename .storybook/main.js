@@ -16,28 +16,28 @@ module.exports = {
     const isprod = config.mode === 'production'
     let tser = isprod
       ? [
-          new TerserPlugin({
-            terserOptions: {
-              parse: {
-                ecma: 8,
-              },
-              compress: {
-                ecma: 5,
-                warnings: true,
-                comparisons: true,
-                inline: 2,
-              },
-              mangle: {
-                safari10: true,
-              },
-              output: {
-                ecma: 5,
-                comments: true,
-                ascii_only: true,
-              },
+        new TerserPlugin({
+          terserOptions: {
+            parse: {
+              ecma: 8,
             },
-          }),
-        ]
+            compress: {
+              ecma: 5,
+              warnings: true,
+              comparisons: true,
+              inline: 2,
+            },
+            mangle: {
+              safari10: true,
+            },
+            output: {
+              ecma: 5,
+              comments: true,
+              ascii_only: true,
+            },
+          },
+        }),
+      ]
       : []
     config.performance = {
       maxAssetSize: maxAssetSize,
@@ -56,13 +56,14 @@ module.exports = {
   },
   webpackFinal: async config => {
     config.module.rules.push({
+      // StoryBook Docs for React uses babel-plugin-react-docgen to extract Docgen comments from your code automatically
       test: /\.(ts|tsx)$/,
       use: [
         {
           loader: 'babel-loader',
         },
         {
-          loader: require.resolve('react-docgen-typescript-loader'),
+          loader: 'react-docgen-typescript-loader',
           options: {
             shouldExtractLiteralValuesFromEnum: true,
             propFilter: prop => {

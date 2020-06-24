@@ -5,7 +5,7 @@ const { name, repository, version } = require('../package.json')
 addParameters({
   options: {
     name: `${name} v${version}`,
-    title: 'Art-ui',
+    title: 'art-ui',
     url: repository,
     showSearchBox: false,
     showPanel: false,

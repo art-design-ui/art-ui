@@ -2,7 +2,7 @@ import React, { useEffect, FC } from 'react'
 import classNames from 'classnames'
 import { DING_CONFIG, createGotoURL } from './unit'
 
-export interface DingProps {
+interface DingProps {
   /** 钉钉ID（必填） */
   appId: string
   /** 钉钉回调地址（必填） */
@@ -29,7 +29,7 @@ interface DDLoginOptions {
 }
 declare function DDLogin(options: DDLoginOptions): void
 
-const DingAuth: FC<DingProps> = (props: DingProps) => {
+export const DingAuth: FC<DingProps> = (props: DingProps) => {
   const {
     appId,
     redirectUri,

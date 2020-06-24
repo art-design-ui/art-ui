@@ -8,10 +8,13 @@ const config = require("./webpack.dev.js")
 const compiler = webpack(config)
 const app = express()
 
+const instance = webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    logLevel: 'silent'
+})
 
-app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
-}))
+
+app.use(instance)
 
 app.use(webpackHotMiddleware(compiler, {
     log: console.log,
@@ -20,6 +23,10 @@ app.use(webpackHotMiddleware(compiler, {
 
 app.use(express.static('.'))
 
-app.listen(3000, () => {
-    console.log("app listen in port:3000")
+console.log('> Starting dev server...')
+
+instance.waitUntilValid(() => {
+    console.log("> App Listening at:http://localhost:3000")
+
 })
+app.listen(3000)

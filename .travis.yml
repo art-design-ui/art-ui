@@ -17,4 +17,4 @@ install:
   yarn install
 
 script:
-  - yarn run storybook-to-ghpages
+  - yarn run storybook-to-ghpages --ci

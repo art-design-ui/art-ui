@@ -1,11 +1,10 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { FC, HTMLAttributes, useRef, useEffect } from 'react'
 import classNames from 'classnames'
 
 export type TagSize = 'lg' | 'sm' | 'default'
 export type TagType = 'primary' | 'default' | 'danger' | 'warning' | 'success' | 'info'
 
-export interface BaseTagProps {
+interface BaseTagProps {
   className?: string
   /** 设置按钮大小 */
   size?: TagSize

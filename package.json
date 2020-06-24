@@ -83,9 +83,10 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "commitizen": "^4.1.2",
+    "conventional-changelog-cli": "^2.0.34",
     "cpr": "^3.0.1",
     "css-loader": "^3.6.0",
-    "cz-conventional-changelog": "^3.2.0",
+    "cz-customizable": "^6.2.0",
     "eslint": "7.2.0",
     "eslint-config-airbnb-typescript": "^8.0.2",
     "eslint-config-prettier": "^6.11.0",
@@ -95,6 +96,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "express": "^4.17.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
@@ -129,15 +131,13 @@
     "webpack-progress-bar": "^1.2.1"
   },
   "lint-staged": {
-    "components/**/*.ts?(x)": [
+    "src/components/**/*.ts?(x)": [
       "prettier --write",
       "eslint --fix",
-      "yarn run test",
-      "git add"
+      "jest --config jest.config.js --passWithNoTests"
     ],
-    "components/**/*.less": [
-      "stylelint --syntax less --fix",
-      "git add"
+    "*.less": [
+      "stylelint --syntax less --fix"
     ]
   },
   "husky": {
@@ -148,7 +148,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
+      "path": "node_modules/cz-customizable"
     }
   }
 }
