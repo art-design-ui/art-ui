@@ -132,12 +132,10 @@
     "src/components/**/*.ts?(x)": [
       "prettier --write",
       "eslint --fix",
-      "jest --config jest.config.js --passWithNoTests",
-      "git add"
+      "jest --config jest.config.js --passWithNoTests"
     ],
     "*.less": [
-      "stylelint --syntax less --fix",
-      "git add"
+      "stylelint --syntax less --fix"
     ]
   },
   "husky": {
