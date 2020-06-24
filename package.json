@@ -38,7 +38,8 @@
     "clean": "rimraf dist lib es",
     "stylelint:fix": "stylelint './src/**/*.less' --syntax less --fix",
     "eslint:fix": "eslint  --color --fix ./src/components",
-    "release": "ts-node ./scripts/release.ts"
+    "release": "ts-node ./scripts/release.ts",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "sideEffects": [
     "dist/*",
@@ -49,6 +50,7 @@
   "author": "vnues",
   "license": "MIT",
   "dependencies": {
+    "@storybook/storybook-deployer": "^2.8.6",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -142,7 +144,7 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
-      }
+    }
   },
   "config": {
     "commitizen": {
