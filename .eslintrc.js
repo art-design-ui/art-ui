@@ -22,5 +22,5 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     "import/prefer-default-export": 0,
     "react/button-has-type": 0
-  },
+  }
 }

@@ -80,4 +80,31 @@ $ npm run test
 $ yarn run docs
 ```
 
+## API文档
 
+> 组件声明Props注释每个类型，`react-docgen-typescript-loader`插件会自动读取
+
+```typescript
+interface BaseButtonProps {
+  className?: string
+  /** 设置 Button 的禁用 */
+  disabled?: boolean
+  /** 设置 Button 的尺寸 */
+  size?: ButtonSize
+  /** 设置 Button 的类型 */
+  btnType?: ButtonType
+  children: React.ReactNode
+  href?: string
+}
+```
+
+### 初始默认值
+
+> 通过类的defaultProps属性初始化默认值
+
+```typescript
+Button.defaultProps = {
+  disabled: false,
+  btnType: 'default',
+}
+```
