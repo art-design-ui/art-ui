@@ -81,9 +81,11 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "commitizen": "^4.1.2",
+    "conventional-changelog-cli": "^2.0.34",
     "cpr": "^3.0.1",
     "css-loader": "^3.6.0",
     "cz-conventional-changelog": "^3.2.0",
+    "cz-customizable": "^6.2.0",
     "eslint": "7.2.0",
     "eslint-config-airbnb-typescript": "^8.0.2",
     "eslint-config-prettier": "^6.11.0",
@@ -142,11 +144,11 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
-      }
+    }
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
+      "path": "node_modules/cz-customizable"
     }
   }
 }
