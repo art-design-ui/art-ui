@@ -1,0 +1,16 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "stable"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  yarn install
+
+script:
+  - yarn run storybook-to-ghpages -- --ci
