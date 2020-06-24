@@ -128,13 +128,13 @@
     "webpack-progress-bar": "^1.2.1"
   },
   "lint-staged": {
-    "src/components/**/*.ts?(x)": [
+    "/src/components/**/*.ts?(x)": [
       "prettier --write",
       "eslint --fix",
       "yarn run test",
       "git add"
     ],
-    "src/components/**/*.less": [
+    "/src/components/**/*.less": [
       "stylelint --syntax less --fix",
       "git add"
     ]
