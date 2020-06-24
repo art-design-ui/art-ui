@@ -34,7 +34,6 @@
     "test": "jest --config jest.config.js",
     "gulp": "cd build && gulp",
     "test:update": "jest --config jest.config.js --updateSnapshot",
-    "test:coverage":"jest --config jest.config.js --coverage",
     "gc": "git-cz",
     "clean": "rimraf dist lib es",
     "stylelint:fix": "stylelint './src/**/*.less' --syntax less --fix",

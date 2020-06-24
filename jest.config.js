@@ -1,8 +1,10 @@
 module.exports = {
   verbose: true,
-  cacheDirectory: './',
-  collectCoverage: false,
+  collectCoverage: true,
+  cacheDirectory: ".cache",
   roots: ['<rootDir>/src/components'],
+  // 这个属性是定义在每个测试文件运行之前，且在测试环境准备好后就会立即执行的文件或模块
+  setupFilesAfterEnv: ["./tests/setupTests.ts"],
   transform: {
     '^.+\\.ts?x?$': 'ts-jest',
   },
