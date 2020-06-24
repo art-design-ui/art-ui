@@ -1,6 +1,3 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
 
@@ -29,7 +26,7 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
  * import { Button } from 'vikingship'
  * ~~~
  */
-export const Button: FC<ButtonProps> = props => {
+export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const { btnType, className, disabled, size, children, href, ...restProps } = props
   // btn, btn-lg, btn-primary
   const classes = classNames('btn', className, {
