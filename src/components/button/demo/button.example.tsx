@@ -55,7 +55,7 @@ export function Ringclick(
 ) {
   return (
     <div
-      className="btn-type-neu-w-down"
+      className="btn-btnType-neu-w-down"
       style={{ padding: '10px', display: 'inline-block', borderRadius: '5px', ...props.style }}
     >
       <NeuWclick callback={props.callback}>{props.children}</NeuWclick>
