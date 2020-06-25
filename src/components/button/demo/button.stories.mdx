@@ -1,7 +1,6 @@
 import { Meta, Story, Props ,Preview } from '@storybook/addon-docs/blocks'
 import  Button  from '../button'
 import "../style/index.less"
-import NeuWdown,{NeuWclick,Ringclick} from './button.example'
 
 <Meta title='组件 |Button ' component={Button}   argTypes={{
     label: { name: 'label' /* ... */ },
@@ -36,7 +35,7 @@ import NeuWdown,{NeuWclick,Ringclick} from './button.example'
 
 <Preview >
   <Story name='按钮类型'>
-   <div>
+   <div className="doc-wraper">
       <Button btnType='default' >default</Button>
       <Button btnType='primary'>primary</Button>
       <Button btnType='danger'>danger</Button>
@@ -52,8 +51,8 @@ import NeuWdown,{NeuWclick,Ringclick} from './button.example'
 
 <Preview >
   <Story name='按钮属性'>
-   <div>
-      <Button btnType='default' >default</Button>
+   <div className="doc-wraper">
+      <Button btnType='default'>default</Button>
       <Button btnType='primary'>primary</Button>
       <Button btnType='danger'>danger</Button>
       <Button btnType='warning'>warning</Button>
@@ -68,12 +67,10 @@ import NeuWdown,{NeuWclick,Ringclick} from './button.example'
 
 <Preview >
   <Story name='按钮尺寸'>
-   <div>
-      <Button btnType='default'>default</Button>
+   <div className="doc-wraper">
+      <Button btnType='primary' size='sm'>primary</Button>
       <Button btnType='primary'>primary</Button>
-      <Button btnType='danger'>danger</Button>
-      <Button btnType='warning'>warning</Button>
-      <Button btnType='success'>success</Button>
+      <Button btnType='primary' size='lg'>primary</Button>
    </div>
   </Story>
 </Preview>
@@ -82,12 +79,8 @@ import NeuWdown,{NeuWclick,Ringclick} from './button.example'
 
 <Preview >
   <Story name='不可用状态'>
-   <div>
-      <Button btnType='default' >default</Button>
-      <Button btnType='primary'>primary</Button>
-      <Button btnType='danger'>danger</Button>
-      <Button btnType='warning'>warning</Button>
-      <Button btnType='success'>success</Button>
+   <div className="doc-wraper">
+      <Button btnType='primary' disabled>primary</Button>
    </div>
   </Story>
 </Preview>
@@ -97,7 +90,7 @@ import NeuWdown,{NeuWclick,Ringclick} from './button.example'
 
 <Preview >
   <Story name='加载中状态'>
-   <div>
+   <div className="doc-wraper">
       <Button btnType='default' >default</Button>
       <Button btnType='primary'>primary</Button>
       <Button btnType='danger'>danger</Button>
@@ -107,25 +100,12 @@ import NeuWdown,{NeuWclick,Ringclick} from './button.example'
   </Story>
 </Preview>
 
-## 多个按钮组合
-
-<Preview >
-  <Story name='多个按钮组合'>
-   <div>
-      <Button btnType='default' >default</Button>
-      <Button btnType='primary'>primary</Button>
-      <Button btnType='danger'>danger</Button>
-      <Button btnType='warning'>warning</Button>
-      <Button btnType='success'>success</Button>
-   </div>
-  </Story>
-</Preview>
 
 ## 幽灵按钮
 
 <Preview >
   <Story name='幽灵按钮'>
-   <div>
+   <div className="doc-wraper">
       <Button btnType='default' >default</Button>
       <Button btnType='primary'>primary</Button>
       <Button btnType='danger'>danger</Button>
@@ -139,12 +119,8 @@ import NeuWdown,{NeuWclick,Ringclick} from './button.example'
 
 <Preview >
   <Story name='危险按钮'>
-   <div>
-      <Button btnType='default' >default</Button>
-      <Button btnType='primary'>primary</Button>
+   <div className="doc-wraper">
       <Button btnType='danger'>danger</Button>
-      <Button btnType='warning'>warning</Button>
-      <Button btnType='success'>success</Button>
    </div>
   </Story>
 </Preview>
@@ -153,7 +129,7 @@ import NeuWdown,{NeuWclick,Ringclick} from './button.example'
 
 <Preview >
   <Story name='Block按钮'>
-   <div>
+   <div className="doc-wraper">
       <Button btnType='default' >default</Button>
       <Button btnType='primary'>primary</Button>
       <Button btnType='danger'>danger</Button>

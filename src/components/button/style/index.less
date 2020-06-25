@@ -12,6 +12,7 @@
   vertical-align: middle;
   background-image: none;
   border: @btn-border-width solid transparent;
+  outline: 0;
   .button-size( @btn-padding-x, @btn-padding-y, @btn-font-size,  @border-radius);
   box-shadow: @btn-box-shadow;
   cursor: pointer;
@@ -25,7 +26,10 @@
       pointer-events: none;
     }
   }
-  &.focus {
+  &.focus,
+  &[focus],
+  &.active,
+  &[active] {
     outline: 0;
   }
 }
