@@ -68,7 +68,7 @@ export const DingAuth: FC<DingProps> = (props: DingProps) => {
       document.body.appendChild(script)
     }
     setScript()
-  }, [])
+  }, [appId, height, onSuccess, redirectUri, state, style, width])
   return <div id="art-dingauth-login-container" className={classNames('art-ding', { className })} />
 }
 

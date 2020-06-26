@@ -20,24 +20,30 @@
 }
 
 .button-style(
-  @background-color,@color,@border-color:lighten(@color,10%),
-  @hover-background-color:lighten(@background-color,7.5%),
-  @hover-border-color:lighten(@border-color,10%),
-  @hover-color:@color) {
+  @background,
+  @border,
+  @color,
+  @hover-background: lighten(@background, 7.5%),
+  @hover-border: lighten(@border, 10%),
+  @hover-color: @color,
+  ) {
   color: @color;
-  background-color: @background-color;
+  background-color: @background;
+  border-color: @border;
   &:hover {
       color: @hover-color;
-      background-color: @hover-background-color;
+      background-color: @hover-background;
+      border-color: @hover-color;
   }
   &:focus {
       color: @hover-color;
-      background-color: @hover-background-color;
+      background-color: @hover-background;
+      border-color: @hover-color;
   }
   &[disabled] {
       color: @color;
-      background-color: @background-color;
-      border-color: @border-color;
+      background-color: @background;
+      border-color: @border;
   }
 }
 

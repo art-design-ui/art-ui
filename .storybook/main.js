@@ -9,7 +9,7 @@ module.exports = {
       options: {
         configureJSX: true,
       },
-    },
+    }
   ],
   managerWebpack: async config => {
     config.optimization.splitChunks = { chunks: 'all', maxSize: maxAssetSize }
