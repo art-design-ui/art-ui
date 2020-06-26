@@ -16,7 +16,7 @@ interface BaseButtonProps {
   /** 设置按钮载入状态 */
   loading?: boolean | { delay: number }
   /** 设置 Button 的类型 */
-  btnType?: ButtonType
+  type?: ButtonType
   children: React.ReactNode
   /** 设置 Button 的尺寸 */
   size?: ButtonSize
@@ -36,7 +36,7 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {
-    btnType,
+    type,
     className,
     disabled,
     size,
@@ -48,15 +48,15 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
     ...restProps
   } = props
   const classes = classNames('btn', className, {
-    [`btn-${btnType}`]: btnType,
+    [`btn-${type}`]: type,
     [`btn-${size}`]: size,
-    disabled: btnType === 'link' && disabled,
+    disabled: type === 'link' && disabled,
     // 样式优先级按照这里排序
     'btn-ghost': ghost,
     'btn-danger': danger,
     'btn-block': block,
   })
-  if (btnType === 'link' && href) {
+  if (type === 'link' && href) {
     return (
       <a className={classes} href={href} {...restProps}>
         {children}

@@ -6,13 +6,13 @@ import '../components/button/style'
 const App = () => {
   return (
     <div>
-      <Button btnType="primary" danger>
+      <Button type="primary" danger>
         primary
       </Button>
-      <Button btnType="dashed" danger>
+      <Button type="dashed" danger>
         dashed
       </Button>
-      <Button btnType="primary" disabled>
+      <Button type="primary" disabled>
         disabled
       </Button>
     </div>
