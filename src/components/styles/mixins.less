@@ -12,40 +12,6 @@
   border: 1px solid mix(@main-color, @auxiliary-color, @scale);
 }
 
-//button
-.button-size(@btn-padding-x,@btn-padding-y,@font-size-base,@border-radius) {
-  padding: @btn-padding-y @btn-padding-x  @btn-padding-y @btn-padding-x;
-  font-size: @font-size-base;
-  border-radius: @border-radius;
-}
-
-.button-style(
-  @background,
-  @border,
-  @color,
-  @hover-background: lighten(@background, 7.5%),
-  @hover-border: lighten(@border, 10%),
-  @hover-color: @color,
-  ) {
-  color: @color;
-  background-color: @background;
-  border-color: @border;
-  &:hover {
-      color: @hover-color;
-      background-color: @hover-background;
-      border-color: @hover-color;
-  }
-  &:focus {
-      color: @hover-color;
-      background-color: @hover-background;
-      border-color: @hover-color;
-  }
-  &[disabled] {
-      color: @color;
-      background-color: @background;
-      border-color: @border;
-  }
-}
 
 .neufactory(@background,@shadow1,@shadow2) {
   background: @background;

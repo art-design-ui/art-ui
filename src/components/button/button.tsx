@@ -2,7 +2,7 @@ import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
 
 export type ButtonSize = 'lg' | 'sm' | 'default'
-export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'warning' | 'success'
+export type ButtonType = 'primary' | 'default' | 'link' | 'warning' | 'success' | 'dashed'
 
 interface BaseButtonProps {
   /** 设置 Button 的禁用  */
@@ -35,11 +35,12 @@ type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const { btnType, className, disabled, size, children, href, ...restProps } = props
+  const { btnType, className, disabled, size, children, href, danger, ...restProps } = props
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
     disabled: btnType === 'link' && disabled,
+    'btn-danger': danger,
   })
   if (btnType === 'link' && href) {
     return (

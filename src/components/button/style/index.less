@@ -1,5 +1,5 @@
 @import "../../styles/variables.less";
-@import "../../styles/mixins.less";
+@import "./mixin.less";
 
 .btn {
   position: relative;
@@ -44,9 +44,6 @@
 .btn-primary {
   .button-style(@primary, @white, @white);
 }
-.btn-danger {
-  .button-style(@danger, @white, @white);
-}
 
 .btn-warning {
   .button-style(@warning, @white, @white);
@@ -57,7 +54,18 @@
 }
 
 .btn-default {
+  .button-style(@white, @gray-400, @body-color,@white,@primary, @primary);
+}
+.btn-dashed {
   .button-style(@white, @gray-400, @body-color, @white, @primary, @primary);
+  border-style: @border-dashed-style;
+}
+.btn-danger {
+  .button-style(@white, @danger, @danger,@white,@danger, @danger);
+}
+
+.btn-primary.btn-danger {
+  .button-style(@danger, @white, @white);
 }
 
 .btn-link {
