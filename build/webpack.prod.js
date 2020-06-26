@@ -8,9 +8,6 @@ module.exports = {
         'art': path.join(rootDir, 'src/components/index.ts'),
         'art.mini': path.join(rootDir, 'src/components/index.ts'),
     },
-    resolve: {
-        extensions: [".js", ".ts", ".tsx"]
-    },
     output: {
         path: path.join(rootDir, 'dist'),
         filename: '[name].js',
@@ -20,6 +17,23 @@ module.exports = {
         // cdn域名
         publicPath: './',
         libraryExport: "default"
+    },
+    resolve: {
+        extensions: [".js", ".ts", ".tsx"]
+    },
+    externals: {
+        react: {
+            root: "React",
+            commonjs2: "react",
+            commonjs: "react",
+            amd: "react"
+        },
+        "react-dom": {
+            root: "ReactDOM",
+            commonjs2: "react-dom",
+            commonjs: "react-dom",
+            amd: "react-dom"
+        }
     },
     module: {
         rules: [

@@ -2,7 +2,7 @@
 
 `Art` 严格遵循 [Ant Design](https://ant.design/docs/spec/proximity-cn) 开发原则。
 
-为了保证代码及组件质量，减少沟通成本，在任何形式的参与前，请先阅读以下内容：
+> 为了保证代码及组件质量，减少沟通成本，在任何形式的参与前，请先阅读以下内容：
 
 
 ## 脚手架功能
@@ -54,8 +54,6 @@ yarn run gc
 - refactor：重构（即不是新增功能，也不是修改bug的代码变动）
 - test：增加测试
 - chore：构建过程或辅助工具的变动
-
-
 
 
 ## dev
@@ -117,8 +115,6 @@ Button.defaultProps = {
   btnType: 'default',
 }
 ```
-
-
 
 
 

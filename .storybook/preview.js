@@ -1,5 +1,4 @@
-import { addDecorator, addParameters, configure } from '@storybook/react'
-
+const { addDecorator, addParameters, configure } = require('@storybook/react')
 const { name, repository, version } = require('../package.json')
 //加载配置
 addParameters({
@@ -17,6 +16,7 @@ addParameters({
     showAddonPanel: false,
   },
 })
+
 
 const loaderFn = () => {
   const allExports = [

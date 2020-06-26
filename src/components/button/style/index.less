@@ -12,7 +12,8 @@
   vertical-align: middle;
   background-image: none;
   border: @btn-border-width solid transparent;
-  .button-size( @btn-padding-y,  @btn-padding-x,  @btn-font-size,  @border-radius);
+  outline: 0;
+  .button-size( @btn-padding-x, @btn-padding-y, @btn-font-size,  @border-radius);
   box-shadow: @btn-box-shadow;
   cursor: pointer;
   transition: @btn-transition;
@@ -25,36 +26,34 @@
       pointer-events: none;
     }
   }
+  &.focus,
+  &[focus],
+  &.active,
+  &[active] {
+    outline: 0;
+  }
 }
 
 .btn-lg {
-  .button-size(@btn-padding-y-lg, @btn-padding-x-lg, @btn-font-size-lg, @btn-border-radius-lg);
+  .button-size( @btn-padding-x-lg, @btn-padding-y-lg,@btn-font-size-lg, @btn-border-radius-lg);
 }
 .btn-sm {
-  .button-size(@btn-padding-y-sm, @btn-padding-x-sm, @btn-font-size-sm, @btn-border-radius-sm);
+  .button-size(@btn-padding-x-sm, @btn-padding-y-sm,@btn-font-size-sm, @btn-border-radius-sm);
 }
 
 .btn-primary {
-  .button-style(@primary, @primary, @white);
+  .button-style(@primary, @white, @white);
 }
 .btn-danger {
-  .button-style(@danger, @danger, @white);
+  .button-style(@danger, @white, @white);
 }
 
 .btn-warning {
-  .button-style(@warning, @warning, @white);
+  .button-style(@warning, @white, @white);
 }
-.btn-info {
-  .button-style(@info, @info, @white);
-}
+
 .btn-success {
-  .button-style(@success, @success, @white);
-}
-.btn-secondary {
-  .button-style(@secondary, @secondary, @white);
-}
-.btn-dark {
-  .button-style(@dark, @dark, @white);
+  .button-style(@success, @white, @white);
 }
 
 .btn-default {

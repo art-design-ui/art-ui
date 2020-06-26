@@ -6,11 +6,9 @@ export type TagType = 'primary' | 'default' | 'danger' | 'warning' | 'success' |
 
 interface BaseTagProps {
   className?: string
-  /** 设置按钮大小 */
+  /** 设置标签大小 */
   size?: TagSize
-  /**
-   * 设置按钮类型
-   */
+  /** 设置标签类型 */
   type?: TagType
   /** 回调ref，组件加载完成回调ref，返回值会在卸载组件时调用 */
   refcallback?: (ref: any) => any
