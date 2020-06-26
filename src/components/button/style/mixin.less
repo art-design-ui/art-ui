@@ -12,7 +12,7 @@
     @color,
     @hover-background: lighten(@background, 7.5%),
     @hover-border: lighten(@border, 10%),
-    @hover-color: @color,
+    @hover-color: lighten(@color, 12.5%),
     ) {
     color: @color;
     background-color: @background;
@@ -33,9 +33,3 @@
         border-color: @border;
     }
   }
-
-  .button-variant-primary(@color, @background,@border) {
-    color: @color;
-    background: @background;
-    border-color: @border;
- }

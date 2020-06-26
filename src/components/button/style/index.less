@@ -10,9 +10,10 @@
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
-  background-image: none;
   border: @btn-border-width solid transparent;
   outline: 0;
+  background: none;
+  background-image: none;
   .button-size( @btn-padding-x, @btn-padding-y, @btn-font-size,  @border-radius);
   box-shadow: @btn-box-shadow;
   cursor: pointer;
@@ -43,30 +44,66 @@
 
 .btn-primary {
   .button-style(@primary, @white, @white);
+  &.btn-ghost {
+    .button-style(transparent, @primary, @primary);
+    &.btn-danger {
+      .button-style(transparent, @danger, @danger);
+    }
+  }
+  &.btn-danger {
+    .button-style(@danger, @white, @white);
+  }
 }
 
 .btn-warning {
   .button-style(@warning, @white, @white);
+  &.btn-ghost {
+    .button-style(transparent, @warning, @warning);
+    &.btn-danger {
+      .button-style(transparent, @danger, @danger);
+    }
+  }
+    &.btn-danger {
+    .button-style(@danger, @white, @white);
+  }
 }
 
 .btn-success {
   .button-style(@success, @white, @white);
+  &.btn-ghost {
+    .button-style(transparent, @success, @success);
+    &.btn-danger {
+      .button-style(transparent, @danger, @danger);
+    }
+  }
+  &.btn-danger {
+    .button-style(@danger, @white, @white);
+  }
 }
 
 .btn-default {
   .button-style(@white, @gray-400, @body-color,@white,@primary, @primary);
+  &.btn-ghost {
+    .button-style(transparent, @white, @white,transparent,@primary,@primary);
+    &.btn-danger {
+      .button-style(transparent, @danger, @danger);
+    }
+  }
 }
 .btn-dashed {
   .button-style(@white, @gray-400, @body-color, @white, @primary, @primary);
   border-style: @border-dashed-style;
+  &.btn-ghost {
+    .button-style(transparent, @white, @white,transparent,@primary,@primary);
+  }
+}
+.btn-ghost {
+  .button-style(transparent, transparent, transparent);
 }
 .btn-danger {
-  .button-style(@white, @danger, @danger,@white,@danger, @danger);
+  .button-style(@white, @danger, @danger);
 }
 
-.btn-primary.btn-danger {
-  .button-style(@danger, @white, @white);
-}
 
 .btn-link {
   font-weight: @font-weight-normal;
@@ -87,5 +124,12 @@
     color: @btn-link-disabled-color;
     pointer-events: none;
   }
+  &.btn-danger {
+    border: none;
+    .button-style(@white, @danger, @danger);
+  }
 }
 
+.btn-block {
+  width: 100%;
+}
