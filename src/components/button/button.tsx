@@ -27,6 +27,8 @@ interface BaseButtonProps {
   /** 将按钮宽度调整为其父宽度的选项 */
   block?: boolean
   className?: string
+  /** 设置危险按钮 */
+  danger?: boolean
 }
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
