@@ -2,7 +2,7 @@ import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
 
 export type ButtonSize = 'lg' | 'sm' | 'default'
-export type ButtonType = 'primary' | 'default' | 'link' | 'warning' | 'success' | 'dashed'
+export type ButtonType = 'primary' | 'default' | 'link' | 'dashed'
 
 interface BaseButtonProps {
   /** 设置 Button 的禁用  */
