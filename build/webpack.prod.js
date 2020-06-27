@@ -19,7 +19,7 @@ module.exports = {
         libraryExport: "default"
     },
     resolve: {
-        extensions: [".js", ".ts", ".tsx"]
+        extensions: [".ts", ".tsx", ".js"]
     },
     externals: {
         react: {
