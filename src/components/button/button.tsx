@@ -1,5 +1,6 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
+import { getPrefixCls } from '@util'
 
 export type ButtonSize = 'lg' | 'sm' | 'default'
 export type ButtonType = 'primary' | 'default' | 'link' | 'dashed'
@@ -34,6 +35,7 @@ type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
+const prefixCls = getPrefixCls('btn')
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {
     type,
@@ -47,14 +49,14 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
     block,
     ...restProps
   } = props
-  const classes = classNames('btn', className, {
-    [`btn-${type}`]: type,
-    [`btn-${size}`]: size,
+  const classes = classNames(prefixCls, className, {
+    [`${prefixCls}-${type}`]: type,
+    [`${prefixCls}-${size}`]: size,
     disabled: type === 'link' && disabled,
     // 样式优先级按照这里排序
-    'btn-ghost': ghost,
-    'btn-danger': danger,
-    'btn-block': block,
+    [`${prefixCls}-ghost`]: ghost,
+    [`${prefixCls}-danger`]: danger,
+    [`${prefixCls}-block`]: block,
   })
   if (type === 'link' && href) {
     return (
