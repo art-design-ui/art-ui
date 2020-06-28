@@ -1,11 +1,13 @@
 {
   "name": "art",
   "version": "1.0.0",
+  "title": "Art Design",
   "description": "art企业中台组件库",
   "author": "vnues",
   "license": "MIT",
+  "homepage": "https://vnues.github.io/art-ui",
   "keywords": [
-    "ant",
+    "art",
     "component",
     "components",
     "design",
@@ -42,6 +44,13 @@
     "eslint:fix": "eslint  --color --fix ./src/components",
     "release": "ts-node ./scripts/release.ts",
     "deploy-storybook": "storybook-to-ghpages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vnues/art-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/vnues/art-ui/issues"
   },
   "sideEffects": [
     "dist/*",
