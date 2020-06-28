@@ -12,7 +12,7 @@ module.exports = {
     ],
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
-        alias: { 'react-dom': '@hot-loader/react-dom' }
+        alias: { 'react-dom': '@hot-loader/react-dom', "@util": path.resolve(__dirname, '../src/components/_util') }
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

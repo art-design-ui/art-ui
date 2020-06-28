@@ -19,7 +19,8 @@ module.exports = {
         libraryExport: "default"
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js"]
+        extensions: [".ts", ".tsx", ".js"],
+        alias: { "@util": path.resolve(__dirname, '../src/components/_util') }
     },
     externals: {
         react: {

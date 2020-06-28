@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "paths":{
+      "art":["src/components/index.ts"],
+      "@util":["src/components/_util"]
+    },
     "target": "esnext",
     "module": "commonjs",
     "jsx": "react",
