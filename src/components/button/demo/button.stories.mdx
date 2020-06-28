@@ -1,13 +1,14 @@
-import { Meta, Story, Props ,Preview } from '@storybook/addon-docs/blocks'
-import  Button  from '../button'
-import "../style/index.less"
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import Button from '../button'
+import '../style/index.less'
 
-<Meta title='组件 |Button ' component={Button}   argTypes={{
+<Meta
+  title="组件 |Button "
+  component={Button}
+  argTypes={{
     label: { name: 'label' /* ... */ },
-  }} />
-
-
-
+  }}
+/>
 
 > 按钮用于开始一个即时操作。
 
@@ -32,114 +33,130 @@ import "../style/index.less"
 
 ## 按钮类型
 
-
-<Preview >
-  <Story name='按钮类型'>
-   <div className="doc-wrapper">
-      <Button type='default' >default</Button>
-      <Button type='primary'>primary</Button>
-      <Button type='dashed'>dashed</Button>
-      <Button type='link'>link</Button>
-   </div>
+<Preview>
+  <Story name="按钮类型">
+    <div className="doc-wrapper">
+      <Button type="default">default</Button>
+      <Button type="primary">primary</Button>
+      <Button type="dashed">dashed</Button>
+      <Button type="link">link</Button>
+    </div>
   </Story>
 </Preview>
-
 
 ## 图标按钮
 
-
-<Preview >
-  <Story name='按钮属性'>
-   <div className="doc-wrapper">
-      <Button type='default'>default</Button>
-      <Button type='primary'>primary</Button>
-      <Button type='dashed'>success</Button>
-   </div>
+<Preview>
+  <Story name="按钮属性">
+    <div className="doc-wrapper">
+      <Button type="default">default</Button>
+      <Button type="primary">primary</Button>
+      <Button type="dashed">success</Button>
+    </div>
   </Story>
 </Preview>
 
-
-
 ## 按钮尺寸
 
-<Preview >
-  <Story name='按钮尺寸'>
-   <div className="doc-wrapper">
-      <Button type='primary' size='sm'>primary</Button>
-      <Button type='primary'>primary</Button>
-      <Button type='primary' size='lg'>primary</Button>
-   </div>
+<Preview>
+  <Story name="按钮尺寸">
+    <div className="doc-wrapper">
+      <Button type="primary" size="sm">
+        primary
+      </Button>
+      <Button type="primary">primary</Button>
+      <Button type="primary" size="lg">
+        primary
+      </Button>
+    </div>
   </Story>
 </Preview>
 
 ## 不可用状态
 
-<Preview >
-  <Story name='不可用状态'>
-   <div className="doc-wrapper">
-      <Button type='primary' disabled>primary</Button>
-   </div>
+<Preview>
+  <Story name="不可用状态">
+    <div className="doc-wrapper">
+      <Button type="primary" disabled>
+        primary
+      </Button>
+    </div>
   </Story>
 </Preview>
 
 ## 加载中状态
 
-
-<Preview >
-  <Story name='加载中状态'>
-   <div className="doc-wrapper">
-      <Button type='default' >default</Button>
-      <Button type='primary'>primary</Button>
-   </div>
+<Preview>
+  <Story name="加载中状态">
+    <div className="doc-wrapper">
+      <Button type="default">default</Button>
+      <Button type="primary">primary</Button>
+    </div>
   </Story>
 </Preview>
 
-
 ## 幽灵按钮
 
-<Preview >
-  <Story name='幽灵按钮'>
-   <div className="doc-wrapper doc-wrapper-ghost">
-      <Button type='primary' ghost>primary</Button>
-      <Button type='default' ghost>default</Button>
-      <Button type='dashed' ghost>dashed</Button>
-      <Button type='link' ghost>dashed</Button>
-   </div>
+<Preview>
+  <Story name="幽灵按钮">
+    <div className="doc-wrapper doc-wrapper-ghost">
+      <Button type="primary" ghost>
+        primary
+      </Button>
+      <Button type="default" ghost>
+        default
+      </Button>
+      <Button type="dashed" ghost>
+        dashed
+      </Button>
+      <Button type="link" ghost>
+        dashed
+      </Button>
+    </div>
   </Story>
 </Preview>
 
 ## 危险按钮
 
-<Preview >
-  <Story name='危险按钮'>
-   <div className="doc-wrapper">
-      <Button type='primary' danger>primary</Button>
-      <Button type='default' danger>success</Button>
-      <Button type='dashed' danger>danger</Button>
-      <Button type='link' danger>link</Button>
-   </div>
+<Preview>
+  <Story name="危险按钮">
+    <div className="doc-wrapper">
+      <Button type="primary" danger>
+        primary
+      </Button>
+      <Button type="default" danger>
+        success
+      </Button>
+      <Button type="dashed" danger>
+        danger
+      </Button>
+      <Button type="link" danger>
+        link
+      </Button>
+    </div>
   </Story>
 </Preview>
 
-## Block按钮
+## Block 按钮
 
-<Preview >
-  <Story name='Block按钮'>
-   <div className="doc-wrapper">
-      <Button type='primary' block>primary</Button>
-      <Button type='default' block>default</Button>
-      <Button type='dashed' block>dashed</Button>
-   </div>
+<Preview>
+  <Story name="Block按钮">
+    <div className="doc-wrapper">
+      <Button type="primary" block>
+        primary
+      </Button>
+      <Button type="default" block>
+        default
+      </Button>
+      <Button type="dashed" block>
+        dashed
+      </Button>
+    </div>
   </Story>
 </Preview>
-
-
-
-
 
 ## API
 
-<Story name='API' />
+<Story name="API" />
 
 <Props of={Button} />
-

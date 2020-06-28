@@ -1,47 +1,49 @@
-@import "../../styles/variables.less";
-@import "../../styles/mixins.less";
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+
 .art-tag {
-    cursor: default;
-    display: inline-block;
-    box-sizing: border-box;
-    line-height: 1.5;
-    border-radius: 4px;
-    .tag-type(@primary, @white);
-    .tag-size(4px, 10px, 14px);
-    & + .tag {
-      margin-left: 8px;
-    }
-    .utils-user-select(none);
+  cursor: default;
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 1.5;
+  border-radius: 4px;
+  .tag-type(@primary, @white);
+  .tag-size(4px, 10px, 14px);
 
-    &-type-primary {
-      .tag-type(@primary, @white);
-    }
-
-    &-type-danger {
-      .tag-type(@danger, @white);
-    }
-
-    &-type-warning {
-      .tag-type(@warning, @white);
-    }
-
-    &-type-info {
-      .tag-type(@info, @white);
-    }
-
-    &-type-success {
-      .tag-type(@success, @white);
-    }
-
-    &-size-lg {
-      .tag-size(4px, 16px, 14px);
-    }
-
-    &-size-sm {
-      .tag-size(2px, 6px, 12px);
-    }
-
-    &-size-default {
-      .tag-size(4px, 10px, 13px);
-    }
+  & + .tag {
+    margin-left: 8px;
   }
+  .utils-user-select(none);
+
+  &-type-primary {
+    .tag-type(@primary, @white);
+  }
+
+  &-type-danger {
+    .tag-type(@danger, @white);
+  }
+
+  &-type-warning {
+    .tag-type(@warning, @white);
+  }
+
+  &-type-info {
+    .tag-type(@info, @white);
+  }
+
+  &-type-success {
+    .tag-type(@success, @white);
+  }
+
+  &-size-lg {
+    .tag-size(4px, 16px, 14px);
+  }
+
+  &-size-sm {
+    .tag-size(2px, 6px, 12px);
+  }
+
+  &-size-default {
+    .tag-size(4px, 10px, 13px);
+  }
+}

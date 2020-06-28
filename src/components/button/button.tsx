@@ -47,6 +47,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
     ghost,
     danger,
     block,
+    loading,
     ...restProps
   } = props
   const classes = classNames(prefixCls, className, {

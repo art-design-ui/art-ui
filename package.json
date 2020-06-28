@@ -19,6 +19,7 @@
   ],
   "main": "lib/index.js",
   "module": "es/index.js",
+  "unpkg": "dist/art.min.js",
   "typings": "lib/index.d.ts",
   "files": [
     "dist",
@@ -43,7 +44,8 @@
     "stylelint:fix": "stylelint './src/**/*.less' --syntax less --fix",
     "eslint:fix": "eslint  --color --fix ./src/components",
     "release": "ts-node ./scripts/release.ts",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "format": "prettier --write ./src"
   },
   "repository": {
     "type": "git",
@@ -122,6 +124,7 @@
     "less-loader": "^6.1.2",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
+    "prettier-stylelint": "^0.4.2",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-hot-loader": "^4.12.21",
     "rimraf": "^3.0.2",
@@ -147,6 +150,7 @@
       "jest --config jest.config.js --passWithNoTests"
     ],
     "*.less": [
+      "prettier --write",
       "stylelint --syntax less --fix"
     ]
   },
