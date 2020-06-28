@@ -70,7 +70,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ForkTsCheckerWebpackPlugin(),
+        new ForkTsCheckerWebpackPlugin({ async: true }),
         new FriendlyErrorsWebpackPlugin(),
         new WebpackProgressBar(),
         new webpack.HotModuleReplacementPlugin(),

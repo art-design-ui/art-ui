@@ -4,6 +4,7 @@ import { getPrefixCls } from '@util'
 
 export type ButtonSize = 'lg' | 'sm' | 'default'
 export type ButtonType = 'primary' | 'default' | 'link' | 'dashed'
+export type ButtonHTMLType = 'submit' | 'button' | 'reset'
 
 interface BaseButtonProps {
   /** 设置 Button 的禁用  */
@@ -31,8 +32,9 @@ interface BaseButtonProps {
   /** 设置危险按钮 */
   danger?: boolean
 }
-type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
-type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
+type NativeButtonProps = BaseButtonProps &
+  Omit<ButtonHTMLAttributes<HTMLElement>, 'type'> & { htmlType?: ButtonHTMLType }
+type AnchorButtonProps = BaseButtonProps & Omit<AnchorHTMLAttributes<HTMLElement>, 'type'>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 const prefixCls = getPrefixCls('btn')
