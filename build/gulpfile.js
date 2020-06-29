@@ -1,13 +1,13 @@
-const gulp = require('gulp');
-const babel = require('gulp-babel');
-const less = require('gulp-less');
-const autoprefixer = require('gulp-autoprefixer');
-const cssnano = require('gulp-cssnano');
-const through2 = require('through2');
-const sourcemaps = require("gulp-sourcemaps");
-const concat = require("gulp-concat");
-const rename = require("gulp-rename");
-const size = require("gulp-filesize");
+const gulp = require('gulp')
+const babel = require('gulp-babel')
+const less = require('gulp-less')
+const autoprefixer = require('gulp-autoprefixer')
+const cssnano = require('gulp-cssnano')
+const through2 = require('through2')
+const sourcemaps = require('gulp-sourcemaps')
+const concat = require('gulp-concat')
+const rename = require('gulp-rename')
+const size = require('gulp-filesize')
 
 const paths = {
   dest: {
@@ -21,7 +21,7 @@ const paths = {
     '!../src/components/**/demo/*.{ts,tsx}',
     '!../src/components/**/__tests__/*.{ts,tsx}',
   ],
-};
+}
 
 /**
  * 当前组件样式 import './index.less' => import './index.css'
@@ -33,7 +33,7 @@ function cssInjection(content) {
   return content
     .replace(/\/style\/?'/g, "/style/css'")
     .replace(/\/style\/?"/g, '/style/css"')
-    .replace(/\.less/g, '.css');
+    .replace(/\.less/g, '.css')
 }
 
 /**
@@ -42,55 +42,52 @@ function cssInjection(content) {
  * @param {string} destDir 目标目录
  */
 function compileScripts(babelEnv, destDir) {
-  const { scripts } = paths;
-  process.env.BABEL_ENV = babelEnv;
+  const { scripts } = paths
+  process.env.BABEL_ENV = babelEnv
   return gulp
     .src(scripts)
     .pipe(babel(require('../.babelrc.js'))) // 使用gulp-babel处理
     .pipe(
       through2.obj(function z(file, encoding, next) {
-        this.push(file.clone());
+        this.push(file.clone())
         // 找到目标
         if (file.path.match(/(\/|\\)style(\/|\\)index\.js/)) {
-          const content = file.contents.toString(encoding);
-          file.contents = Buffer.from(cssInjection(content)); // 处理文件内容
-          file.path = file.path.replace(/index\.js/, 'css.js'); // 文件重命名
-          this.push(file); // 新增该文件
-          next();
+          const content = file.contents.toString(encoding)
+          file.contents = Buffer.from(cssInjection(content)) // 处理文件内容
+          file.path = file.path.replace(/index\.js/, 'css.js') // 文件重命名
+          this.push(file) // 新增该文件
+          next()
         } else {
-          next();
+          next()
         }
       }),
     )
-    .pipe(gulp.dest(destDir));
+    .pipe(gulp.dest(destDir))
 }
 
 /**
  * 编译cjs
  */
 function compileCJS() {
-  const { dest } = paths;
-  return compileScripts('cjs', dest.lib);
+  const { dest } = paths
+  return compileScripts('cjs', dest.lib)
 }
 
 /**
  * 编译es
  */
 function compilees() {
-  const { dest } = paths;
-  return compileScripts('es', dest.es);
+  const { dest } = paths
+  return compileScripts('es', dest.es)
 }
 
-const buildScripts = gulp.series(compileCJS, compilees);
+const buildScripts = gulp.series(compileCJS, compilees)
 
 /**
  * 拷贝less文件
  */
 function copyLess() {
-  return gulp
-    .src(paths.styles)
-    .pipe(gulp.dest(paths.dest.lib))
-    .pipe(gulp.dest(paths.dest.es));
+  return gulp.src(paths.styles).pipe(gulp.dest(paths.dest.lib)).pipe(gulp.dest(paths.dest.es))
 }
 
 /**
@@ -103,10 +100,8 @@ function less2css() {
     .pipe(autoprefixer()) // 根据browserslistrc增加前缀
     .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
     .pipe(gulp.dest(paths.dest.lib))
-    .pipe(gulp.dest(paths.dest.es));
+    .pipe(gulp.dest(paths.dest.es))
 }
-
-
 
 /**
  * 生成umd模块的css文件
@@ -118,8 +113,8 @@ function less2UmdCss() {
     .pipe(sourcemaps.init())
     .pipe(
       less({
-        outputStyle: "compressed"
-      })
+        outputStyle: 'compressed',
+      }),
     )
     .pipe(autoprefixer())
     .pipe(concat(`art.css`))
@@ -136,12 +131,11 @@ function less2UmdCss() {
     .pipe(sourcemaps.write())
     .pipe(rename(`art.min.css.map`))
     .pipe(size())
-    .pipe(gulp.dest(paths.dest.dist));
+    .pipe(gulp.dest(paths.dest.dist))
 }
 
+const build = gulp.parallel(buildScripts, copyLess, less2css, less2UmdCss)
 
-const build = gulp.parallel(buildScripts, copyLess, less2css, less2UmdCss);
+exports.build = build
 
-exports.build = build;
-
-exports.default = build;
+exports.default = build

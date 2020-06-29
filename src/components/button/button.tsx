@@ -40,7 +40,7 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 const prefixCls = getPrefixCls('btn')
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {
-    type,
+    type = 'default',
     className,
     disabled,
     size,

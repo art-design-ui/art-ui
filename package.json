@@ -45,7 +45,8 @@
     "eslint:fix": "eslint  --color --fix ./src/components",
     "release": "ts-node ./scripts/release.ts",
     "deploy-storybook": "storybook-to-ghpages",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "coverage": "node ./build/coverage-server"
   },
   "repository": {
     "type": "git",
