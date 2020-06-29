@@ -1,4 +1,5 @@
 const TerserPlugin = require('terser-webpack-plugin')
+const path = require("path")
 let maxAssetSize = 1024 * 1024
 let minSize = 30000
 module.exports = {
@@ -116,6 +117,7 @@ module.exports = {
       runtimeChunk: true,
     }
     config.resolve.extensions.push('.ts', '.tsx')
+    config.resolve.alias = { "@util": path.resolve(__dirname, '../src/components/_util') }
     return config
   },
 }

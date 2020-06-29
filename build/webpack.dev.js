@@ -2,7 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack');
 const WebpackProgressBar = require('webpack-progress-bar')
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+
 
 module.exports = {
     mode: "development",
@@ -11,8 +13,8 @@ module.exports = {
         path.join(__dirname, '../src/example/index.tsx'),
     ],
     resolve: {
-        extensions: [".js", ".ts", ".tsx"],
-        alias: { 'react-dom': '@hot-loader/react-dom' }
+        extensions: [".ts", ".tsx", ".js"],
+        alias: { 'react-dom': '@hot-loader/react-dom', "@util": path.resolve(__dirname, '../src/components/_util') }
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -68,6 +70,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new ForkTsCheckerWebpackPlugin({ async: true }),
         new FriendlyErrorsWebpackPlugin(),
         new WebpackProgressBar(),
         new webpack.HotModuleReplacementPlugin(),

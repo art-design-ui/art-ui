@@ -4,7 +4,7 @@
  * @param redirectUri goto 指定的重定向 URL，使用授权域名防止被挡
  * @param state 防止重放攻击的选项，选用
  */
-export function createGotoURL(appId: any, redirectUri: string, state: any = '') {
+export function createGotoURL(appId: string, redirectUri: string, state = ''): string {
   return encodeURIComponent(
     `https://oapi.dingtalk.com/connect/oauth2/sns_authorize?appid=${appId}&response_type=code&scope=snsapi_login&state=${state}&redirect_uri=${encodeURIComponent(
       redirectUri,

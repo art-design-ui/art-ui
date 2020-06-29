@@ -1,44 +1,43 @@
-import { Meta, Story, Props ,Preview } from '@storybook/addon-docs/blocks';
-import Tag from '../tag';
-import "../style/index.less"
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import Tag from '../tag'
+import '../style/index.less'
 
-<Meta title='组件|Tag ' component={Tag} />
+<Meta title="组件|Tag " component={Tag} />
 
-<br/>
+<br />
 
 # Tag 标签
-<br/>
+
+<br />
 
 ## 标签类型
 
 <Preview>
-  <Story name='标签类型'>
-   <div className="doc-wraper">
-      <Tag type='primary'>标签一</Tag>
-      <Tag type='danger'>标签二</Tag>
-      <Tag type='warning'>标签三</Tag>
-      <Tag type='info'>标签四</Tag>
-      <Tag type='success'>标签五</Tag>
-   </div>
+  <Story name="标签类型">
+    <div className="doc-wraper">
+      <Tag type="primary">标签一</Tag>
+      <Tag type="danger">标签二</Tag>
+      <Tag type="warning">标签三</Tag>
+      <Tag type="info">标签四</Tag>
+      <Tag type="success">标签五</Tag>
+    </div>
   </Story>
 </Preview>
 
 ## 标签尺寸
 
-<Preview >
-  <Story name='标签尺寸'>
-   <div className="doc-wraper">
-      <Tag size='sm' >标签一</Tag>
-      <Tag size='default'>标签二</Tag>
-      <Tag size='lg'>标签三</Tag>
-   </div>
+<Preview>
+  <Story name="标签尺寸">
+    <div className="doc-wraper">
+      <Tag size="sm">标签一</Tag>
+      <Tag size="default">标签二</Tag>
+      <Tag size="lg">标签三</Tag>
+    </div>
   </Story>
 </Preview>
 
-
 ## API
 
-<Story name='API' />
+<Story name="API" />
 
 <Props of={Tag} />
-

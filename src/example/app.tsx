@@ -6,7 +6,15 @@ import '../components/button/style'
 const App = () => {
   return (
     <div>
-      <Button btnType="primary">111</Button>
+      <Button type="primary" danger>
+        primary
+      </Button>
+      <Button type="dashed" danger>
+        dashed
+      </Button>
+      <Button type="primary" disabled>
+        disabled
+      </Button>
     </div>
   )
 }

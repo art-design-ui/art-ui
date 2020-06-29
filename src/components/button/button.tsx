@@ -1,8 +1,10 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
+import { getPrefixCls } from '@util'
 
 export type ButtonSize = 'lg' | 'sm' | 'default'
-export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'warning' | 'success'
+export type ButtonType = 'primary' | 'default' | 'link' | 'dashed'
+export type ButtonHTMLType = 'submit' | 'button' | 'reset'
 
 interface BaseButtonProps {
   /** 设置 Button 的禁用  */
@@ -16,7 +18,7 @@ interface BaseButtonProps {
   /** 设置按钮载入状态 */
   loading?: boolean | { delay: number }
   /** 设置 Button 的类型 */
-  btnType?: ButtonType
+  type?: ButtonType
   children: React.ReactNode
   /** 设置 Button 的尺寸 */
   size?: ButtonSize
@@ -27,19 +29,39 @@ interface BaseButtonProps {
   /** 将按钮宽度调整为其父宽度的选项 */
   block?: boolean
   className?: string
+  /** 设置危险按钮 */
+  danger?: boolean
 }
-type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
-type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
+type NativeButtonProps = BaseButtonProps &
+  Omit<ButtonHTMLAttributes<HTMLElement>, 'type'> & { htmlType?: ButtonHTMLType }
+type AnchorButtonProps = BaseButtonProps & Omit<AnchorHTMLAttributes<HTMLElement>, 'type'>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
+const prefixCls = getPrefixCls('btn')
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const { btnType, className, disabled, size, children, href, ...restProps } = props
-  const classes = classNames('btn', className, {
-    [`btn-${btnType}`]: btnType,
-    [`btn-${size}`]: size,
-    disabled: btnType === 'link' && disabled,
+  const {
+    type,
+    className,
+    disabled,
+    size,
+    children,
+    href,
+    ghost,
+    danger,
+    block,
+    loading,
+    ...restProps
+  } = props
+  const classes = classNames(prefixCls, className, {
+    [`${prefixCls}-${type}`]: type,
+    [`${prefixCls}-${size}`]: size,
+    disabled: type === 'link' && disabled,
+    // 样式优先级按照这里排序
+    [`${prefixCls}-ghost`]: ghost,
+    [`${prefixCls}-danger`]: danger,
+    [`${prefixCls}-block`]: block,
   })
-  if (btnType === 'link' && href) {
+  if (type === 'link' && href) {
     return (
       <a className={classes} href={href} {...restProps}>
         {children}
