@@ -78,7 +78,13 @@ yarn run dev
 编写完测试用例后，使用以下命令进行测试，确保测试质量：
 
 ```
-$ npm run test
+$ yarn run test
+```
+
+### 查看测试覆盖率
+
+```
+$ yarn run coverage
 ```
 
 ## Doc
@@ -126,7 +132,7 @@ Button.defaultProps = {
 - 生成 CHANGELOG
 - 推送至 git 仓库
 - 组件库打包
-- 发布至 npm
+- 发布至 yarn
 - 打 tag 并推送至 git
 
 
