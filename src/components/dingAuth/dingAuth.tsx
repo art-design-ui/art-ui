@@ -2,7 +2,7 @@ import React, { useEffect, FC } from 'react'
 import classNames from 'classnames'
 import { DING_CONFIG, createGotoURL } from './unit'
 
-interface DingProps {
+export interface DingProps {
   /** 钉钉ID（必填） */
   appId: string
   /** 钉钉回调地址（必填） */
@@ -69,7 +69,9 @@ export const DingAuth: FC<DingProps> = (props: DingProps) => {
     }
     setScript()
   }, [appId, height, onSuccess, redirectUri, state, style, width])
-  return <div id="art-dingauth-login-container" className={classNames('art-ding', { className })} />
+  return (
+    <div id="art-ding-auth-login-container" className={classNames('art-ding', { className })} />
+  )
 }
 
 export default DingAuth

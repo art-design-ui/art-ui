@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
   verbose: true,
   collectCoverage: true,
@@ -14,6 +15,9 @@ module.exports = {
     '<rootDir>/dist/',
     '<rootDir>/es/',
   ],
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  moduleNameMapper: {
+    '@util': path.resolve(__dirname, './src/components/_util')
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx|js)?$',
 }
