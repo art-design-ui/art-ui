@@ -26,6 +26,7 @@ module.exports = {
     "import/prefer-default-export": 0,
     "react/button-has-type": 0,
     "react-hooks/rules-of-hooks": "error", // 检查 Hook 的规则
-    "react-hooks/exhaustive-deps": "warn" // 检查 effect 的依赖
+    "react-hooks/exhaustive-deps": "warn", // 检查 effect 的依赖
+    "no-console": "off"
   }
 }
