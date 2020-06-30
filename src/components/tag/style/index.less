@@ -1,7 +1,9 @@
 @import '../../styles/variables.less';
 @import '../../styles/mixins.less';
 
-.art-tag {
+@tag-prefix-cls: ~'@{ant-prefix}-tag';
+
+.@{tag-prefix-cls} {
   cursor: default;
   display: inline-block;
   box-sizing: border-box;
@@ -10,40 +12,40 @@
   .tag-type(@primary, @white);
   .tag-size(4px, 10px, 14px);
 
-  & + .tag {
+  & + .@{tag-prefix-cls} {
     margin-left: 8px;
   }
   .utils-user-select(none);
 
-  &-type-primary {
+  &-primary {
     .tag-type(@primary, @white);
   }
 
-  &-type-danger {
+  &-danger {
     .tag-type(@danger, @white);
   }
 
-  &-type-warning {
+  &-warning {
     .tag-type(@warning, @white);
   }
 
-  &-type-info {
+  &-info {
     .tag-type(@info, @white);
   }
 
-  &-type-success {
+  &-success {
     .tag-type(@success, @white);
   }
 
-  &-size-lg {
+  &-lg {
     .tag-size(4px, 16px, 14px);
   }
 
-  &-size-sm {
+  &-sm {
     .tag-size(2px, 6px, 12px);
   }
 
-  &-size-default {
+  &-default {
     .tag-size(4px, 10px, 13px);
   }
 }
