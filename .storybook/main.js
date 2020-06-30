@@ -67,6 +67,7 @@ module.exports = {
           loader: 'react-docgen-typescript-loader',
           options: {
             shouldExtractLiteralValuesFromEnum: true,
+            setDisplayName: true,
             propFilter: prop => {
               if (prop.parent) {
                 return !prop.parent.fileName.includes('node_modules')

@@ -1,9 +1,9 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
-import Switch from '../switch'
+import Switch from '../Switch'
 import '../style/index.less'
 
 <Meta
-  title="组件 | Switch "
+  title="组件|Switch "
   component={Switch}
 />
 
@@ -35,7 +35,7 @@ import '../style/index.less'
 <Preview>
   <Story name="不可用">
     <div className="doc-wrapper">
-      <Switch disabled /> 
+      <Switch disabled checked /> 
     </div>
   </Story>
 </Preview>
@@ -48,8 +48,8 @@ import '../style/index.less'
 <Preview>
   <Story name="两种大小">
     <div className="doc-wrapper">
-      <Switch  /> 
-      <Switch size={'small'}  /> 
+      <Switch checked /> 
+      <Switch size={'small'} checked  /> 
     </div>
   </Story>
 </Preview>

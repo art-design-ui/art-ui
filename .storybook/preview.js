@@ -28,4 +28,5 @@ const loaderFn = () => {
   req.keys().forEach(fname => allExports.push(req(fname)))
   return allExports
 }
+
 configure(loaderFn, module)

@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect, CSSProperties } from 'react'
 import classNames from 'classnames'
 import { getPrefixCls } from '@util'
 
@@ -13,6 +13,7 @@ export type SwitchClickEventHandler = SwitchChangeEventHandler
 
 export interface SwitchProps
   extends Omit<React.HTMLAttributes<HTMLButtonElement>, 'onChange' | 'onClick'> {
+  /** 开关大小 */
   size?: SwitchSize
   /** Switch 器类名 */
   className?: string
@@ -27,7 +28,7 @@ export interface SwitchProps
   onChange?: SwitchChangeEventHandler
   /** 点击时回调函数 */
   onClick?: SwitchClickEventHandler
-  style?: React.CSSProperties
+  style?: CSSProperties
 }
 const fixControlledValue = (value: boolean | undefined): boolean => {
   if (typeof value === 'undefined' || value === null) {

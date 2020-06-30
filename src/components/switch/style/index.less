@@ -89,4 +89,34 @@
       cursor: not-allowed;
     }
   }
+  // ========================== Size ==========================
+  &-small {
+    min-width: @switch-sm-min-width;
+    height: @switch-sm-height;
+    line-height: @switch-sm-height;
+
+    .@{switch-prefix-cls}-inner {
+      margin: 0 @switch-sm-inner-margin-min 0 @switch-sm-inner-margin-max;
+      font-size: @font-size-sm;
+    }
+
+    .@{switch-prefix-cls}-handle {
+      width: @switch-sm-pin-size;
+      height: @switch-sm-pin-size;
+    }
+
+    .@{switch-prefix-cls}-loading-icon {
+      transform: translate(-50%, -50%) scale(0.66667);
+    }
+
+    &.@{switch-prefix-cls}-checked {
+      .@{switch-prefix-cls}-inner {
+        margin: 0 @switch-sm-inner-margin-max 0 @switch-sm-inner-margin-min;
+      }
+
+      .@{switch-prefix-cls}-handle {
+        left: calc(100% - @switch-sm-pin-size - @switch-padding);
+      }
+    }
+  }
 }
