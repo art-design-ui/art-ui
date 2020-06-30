@@ -1,0 +1,62 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import Switch from '../switch'
+import '../style/index.less'
+
+<Meta
+  title="组件 | Switch "
+  component={Switch}
+/>
+
+
+> 开关选择器。
+
+
+## 何时使用
+
+- 需要表示开关状态/两种状态之间的切换时；
+
+- 和 `checkbox`的区别是，切换 `switch `会直接触发状态改变，而 `checkbox` 一般用于状态标记，需要和提交操作配合
+
+
+## 基本
+
+<Preview>
+  <Story name="基本">
+    <div className="doc-wrapper">
+      <Switch /> 
+    </div>
+  </Story>
+</Preview>
+
+
+
+## 不可用
+
+<Preview>
+  <Story name="不可用">
+    <div className="doc-wrapper">
+      <Switch disabled /> 
+    </div>
+  </Story>
+</Preview>
+
+
+
+## 两种大小
+
+
+<Preview>
+  <Story name="两种大小">
+    <div className="doc-wrapper">
+      <Switch  /> 
+      <Switch size={'small'}  /> 
+    </div>
+  </Story>
+</Preview>
+
+
+## API
+
+<Story name="API" />
+
+<Props of={Switch} />

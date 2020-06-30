@@ -18,7 +18,7 @@ export interface DingProps {
   height?: number
   /** 扫码通信成功的回调 value是temp_code */
   onSuccess?: (value: string) => void
-  [key: string]: any
+  className?: string
 }
 
 interface DDLoginOptions {

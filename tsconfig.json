@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "paths":{
-      "art":["src/components/index.ts"],
-      "@util":["src/components/_util"]
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "art": ["src/components/index.ts"],
+      "@util": ["src/components/_util"]
     },
     "target": "esnext",
     "module": "commonjs",
+    // react模式会生成React.createElement，在使用前不需要再进行转换操作了
     "jsx": "react",
     "declaration": true,
     "declarationDir": "lib",
@@ -22,8 +19,6 @@
     "resolveJsonModule": true,
     "importHelpers": true
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }

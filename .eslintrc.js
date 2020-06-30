@@ -15,7 +15,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    extraFileExtensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extraFileExtensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   rules: {
     'import/extensions': 0,

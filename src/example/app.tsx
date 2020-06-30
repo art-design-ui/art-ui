@@ -1,8 +1,10 @@
 import React from 'react'
 import { hot } from 'react-hot-loader/root'
+import '../components/button/style'
+import '../components/switch/style'
 import Button from '../components/button'
 import DingAuth from '../components/dingAuth'
-import '../components/button/style'
+import Switch from '../components/switch'
 
 const App = () => {
   return (
@@ -27,6 +29,7 @@ const App = () => {
           console.log('onSuccess')
         }}
       />
+      <Switch defaultChecked />
     </div>
   )
 }

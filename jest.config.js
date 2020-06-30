@@ -9,6 +9,11 @@ module.exports = {
   transform: {
     '^.+\\.ts?x?$': 'ts-jest',
   },
+  globals: {
+    'ts-jest': {
+      tsConfig: './tsconfig.json'
+    }
+  },
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
     '<rootDir>/lib/',
@@ -19,5 +24,6 @@ module.exports = {
     '@util': path.resolve(__dirname, './src/components/_util')
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  testEnvironment: 'jsdom',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx|js)?$',
 }
