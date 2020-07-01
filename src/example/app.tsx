@@ -2,15 +2,17 @@ import React, { useState } from 'react'
 import { hot } from 'react-hot-loader/root'
 import '../components/button/style'
 import '../components/switch/style'
+import '../components/spin/style'
 import Button from '../components/button'
 import DingAuth from '../components/dingAuth'
 import Switch from '../components/switch'
+import Spin from '../components/spin'
 
 const App = () => {
   const [checked, setChecked] = useState<boolean>(false)
-  // const handleSiwtch = (check: boolean) => {
-  //   setChecked(check)
-  // }
+  const handleSiwtch = (check: boolean) => {
+    setChecked(check)
+  }
   return (
     <div>
       <Button type="primary" danger>
@@ -33,7 +35,10 @@ const App = () => {
           console.log('onSuccess')
         }}
       />
-      <Switch defaultChecked checked={checked} />
+      <Switch defaultChecked checked={checked} onChange={handleSiwtch} />
+      <Spin />
+      <br />
+      <Spin size="large" />
     </div>
   )
 }

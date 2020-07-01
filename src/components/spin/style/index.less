@@ -1,0 +1,105 @@
+@import '../../styles/variables.less';
+@import '../../styles/animate.less';
+@import './mixin.less';
+
+@spin-prefix-cls: ~'@{art-prefix}-spin';
+
+.@{spin-prefix-cls} {
+  position: absolute;
+  display: none;
+  color: @primary;
+  text-align: center;
+  vertical-align: middle;
+  opacity: 0;
+  transition: transform 0.3s @ease-in-out-circ;
+
+  &-spinning {
+    position: static;
+    display: inline-block;
+    opacity: 1;
+  }
+
+  &-dot {
+    position: relative;
+    display: inline-block;
+    font-size: @spin-dot-size;
+
+    .square(1em);
+
+    &-item {
+      position: absolute;
+      display: block;
+      width: 9px;
+      height: 9px;
+      background-color: @primary;
+      border-radius: 100%;
+      transform: scale(0.75);
+      transform-origin: 50% 50%;
+      opacity: 0.3;
+      animation: artSpinMove 1s infinite linear alternate;
+
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+        animation-delay: 0.4s;
+      }
+
+      &:nth-child(3) {
+        right: 0;
+        bottom: 0;
+        animation-delay: 0.8s;
+      }
+
+      &:nth-child(4) {
+        bottom: 0;
+        left: 0;
+        animation-delay: 1.2s;
+      }
+    }
+
+    &-spin {
+      transform: rotate(45deg);
+      animation: artRotate 1.2s infinite linear;
+    }
+  }
+
+  // Sizes
+  // ------------------------------
+
+  // small
+  &-small {
+    font-size: @spin-dot-size-sm;
+
+    i {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  // large
+  &-large {
+    font-size: @spin-dot-size-lg;
+
+    i {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+@keyframes artSpinMove {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes artRotate {
+  to {
+    transform: rotate(405deg);
+  }
+}

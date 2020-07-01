@@ -4,7 +4,7 @@ import { getPrefixCls } from '@util'
 
 const prefixCls = getPrefixCls('switch')
 
-export type SwitchSize = 'small' | 'defaut'
+export type SwitchSize = 'small' | 'default'
 export type SwitchChangeEventHandler = (
   checked: boolean,
   event?: React.MouseEvent<HTMLButtonElement>,
@@ -50,7 +50,7 @@ export const Switch: FC<SwitchProps> = (props: SwitchProps) => {
   } = props
   const [checkedState, setCheckState] = useState<boolean>(fixControlledValue(defaultChecked))
   const classes = classNames(prefixCls, className, {
-    [`${prefixCls}-${size}`]: size,
+    [`${prefixCls}-small`]: size === 'small',
     [`${prefixCls}-checked`]: checkedState,
     [`${prefixCls}-disabled`]: disabled,
   })

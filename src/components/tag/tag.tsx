@@ -2,7 +2,7 @@ import React, { FC, HTMLAttributes } from 'react'
 import classNames from 'classnames'
 import { getPrefixCls } from '@util'
 
-export type TagSize = 'lg' | 'sm' | 'default'
+export type TagSize = 'large' | 'small' | 'default'
 export type TagType = 'primary' | 'default' | 'danger' | 'warning' | 'success' | 'info'
 
 interface BaseTagProps {

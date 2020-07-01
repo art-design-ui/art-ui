@@ -1,0 +1,54 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import Spin from '../spin'
+import '../style/index.less'
+
+<Meta title="组件|Spin " component={Spin} />
+
+> 用于页面和区块的加载中状态。
+
+## 何时使用
+
+- 页面局部处于等待异步数据或正在渲染过程时，合适的加载动效会有效缓解用户的焦虑。
+
+
+## 基本用法
+
+
+<Preview>
+  <Story name="基本用法">
+    <div className="doc-wrapper-spin">
+      <Spin />
+    </div>
+  </Story>
+</Preview>
+
+## 各种大小
+
+<Preview>
+  <Story name="各种大小">
+    <div className="doc-wrapper-spin">
+      <Spin size={'small'} />
+      <Spin />
+      <Spin size={'large'} />
+    </div>
+  </Story>
+</Preview>
+
+
+
+## 放入一个容器中。
+
+<Preview>
+  <Story name="两种大小">
+    <div className="doc-wrapper-spin container">
+       <Spin />
+    </div>
+  </Story>
+</Preview>
+
+
+## API
+
+<Story name="API" />
+
+<Props of={Spin} />

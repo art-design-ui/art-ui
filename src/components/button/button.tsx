@@ -2,7 +2,7 @@ import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
 import { getPrefixCls } from '@util'
 
-export type ButtonSize = 'lg' | 'sm' | 'default'
+export type ButtonSize = 'large' | 'small' | 'default'
 export type ButtonType = 'primary' | 'default' | 'link' | 'dashed'
 export type ButtonHTMLType = 'submit' | 'button' | 'reset'
 
@@ -54,7 +54,8 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   } = props
   const classes = classNames(prefixCls, className, {
     [`${prefixCls}-${type}`]: type,
-    [`${prefixCls}-${size}`]: size,
+    [`${prefixCls}-small`]: size === 'small',
+    [`${prefixCls}-large`]: size === 'large',
     disabled: type === 'link' && disabled,
     // 样式优先级按照这里排序
     [`${prefixCls}-ghost`]: ghost,
