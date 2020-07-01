@@ -18,6 +18,12 @@ const defaultAndValueProps: SwitchProps = {
   checked: void 0,
 }
 
+const disAbledProps: SwitchProps = {
+  defaultChecked: true,
+  disabled: true,
+  onClick: jest.fn(),
+}
+
 describe('test Switch component', () => {
   it('should render close state', () => {
     const wrapper = render(<Switch {...checkeDefaultdProps} />)
@@ -26,6 +32,13 @@ describe('test Switch component', () => {
     fireEvent.click(element)
     expect(element.getAttribute('aria-checked')).toEqual('false')
     expect(wrapper).toMatchSnapshot()
+  })
+  it('should render disabled when base on disabed state', () => {
+    const wrapper = render(<Switch {...disAbledProps} />)
+    const element = wrapper.container.querySelector('.art-switch') as HTMLButtonElement
+    expect(element).toHaveClass('art-switch art-switch-disabled')
+    fireEvent.click(element)
+    expect(haveClickProps.onClick).not.toHaveBeenCalled()
   })
   it('should render deFalutValue state when value is undefined or null', () => {
     const wrapper = render(<Switch {...defaultAndValueProps} />)
