@@ -7,7 +7,7 @@ const prefixCls = getPrefixCls('switch')
 export type SwitchSize = 'small' | 'defaut'
 export type SwitchChangeEventHandler = (
   checked: boolean,
-  event: React.MouseEvent<HTMLButtonElement>,
+  event?: React.MouseEvent<HTMLButtonElement>,
 ) => void
 export type SwitchClickEventHandler = SwitchChangeEventHandler
 
@@ -62,7 +62,11 @@ export const Switch: FC<SwitchProps> = (props: SwitchProps) => {
   }, [checked])
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setCheckState(!checkedState)
+    // value优先级大于defaultValue
+    if (typeof checked === 'undefined' || checked === null) {
+      setCheckState(!checkedState)
+    }
+    // 非受控组件也要暴露这些API
     onClick?.(!checked, e)
     onChange?.(!checked, e)
   }

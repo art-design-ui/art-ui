@@ -6,7 +6,7 @@
       "art": ["src/components/index.ts"],
       "@util": ["src/components/_util"]
     },
-    "target": "esnext",
+    "target": "es5",
     "module": "commonjs",
     // react模式会生成React.createElement，在使用前不需要再进行转换操作了
     "jsx": "react",

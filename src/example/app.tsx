@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { hot } from 'react-hot-loader/root'
 import '../components/button/style'
 import '../components/switch/style'
@@ -7,6 +7,10 @@ import DingAuth from '../components/dingAuth'
 import Switch from '../components/switch'
 
 const App = () => {
+  const [checked, setChecked] = useState<boolean>(false)
+  // const handleSiwtch = (check: boolean) => {
+  //   setChecked(check)
+  // }
   return (
     <div>
       <Button type="primary" danger>
@@ -29,7 +33,7 @@ const App = () => {
           console.log('onSuccess')
         }}
       />
-      <Switch defaultChecked />
+      <Switch defaultChecked checked={checked} />
     </div>
   )
 }
