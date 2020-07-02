@@ -1,0 +1,47 @@
+@import '../../styles/variables.less';
+
+@icon-prefix-cls: ~'@{art-prefix}-icon';
+
+.@{icon-prefix-cls} {
+  color: @gray-600;
+  @primary-colors: @primary;
+  @secondary-colors: @secondary;
+  @success-colors: @success;
+  @info-colors: @info;
+  @warning-colors: @warning;
+  @danger-colors: @danger;
+  @light-colors: @light;
+  @dark-colors: @dark;
+
+  &-primary {
+    color: @primary-colors;
+  }
+
+  &-secondary {
+    color: @secondary;
+  }
+
+  &-success {
+    color: @success;
+  }
+
+  &-info {
+    color: @info;
+  }
+
+  &-warning {
+    color: @warning;
+  }
+
+  &-danger {
+    color: @danger;
+  }
+
+  &-light {
+    color: @light;
+  }
+
+  &-dark {
+    color: @dark;
+  }
+}

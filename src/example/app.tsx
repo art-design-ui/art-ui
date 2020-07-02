@@ -3,10 +3,7 @@ import { hot } from 'react-hot-loader/root'
 import '../components/button/style'
 import '../components/switch/style'
 import '../components/spin/style'
-import Button from '../components/button'
-import DingAuth from '../components/dingAuth'
-import Switch from '../components/switch'
-import Spin from '../components/spin'
+import { Button, DingAuth, Switch, Spin, Icon } from '../components'
 
 const App = () => {
   const [checked, setChecked] = useState<boolean>(false)
@@ -39,6 +36,7 @@ const App = () => {
       <Spin />
       <br />
       <Spin size="large" />
+      <Icon icon="ad" size="2x" theme="primary" />
     </div>
   )
 }
