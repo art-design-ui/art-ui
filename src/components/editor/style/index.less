@@ -1,0 +1,21 @@
+@import '../../styles/variables.less';
+
+@editor-prefix-cls: ~'@{art-prefix}-editor';
+
+.@{editor-prefix-cls} {
+  width: 100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  position: relative;
+
+  &-header {
+    padding: 8px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  &-main {
+    min-height: 150px;
+    padding: 20px;
+    outline: none;
+  }
+}
