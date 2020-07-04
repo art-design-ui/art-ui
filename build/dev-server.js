@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const chalk = require('chalk')
+const portfinder = require('portfinder')
 
 const config = require('./webpack.dev.js')
 const compiler = webpack(config)
@@ -26,7 +27,11 @@ app.use(express.static('.'))
 
 console.log('> Starting dev server...')
 
-instance.waitUntilValid(() => {
-  console.log(`> App Listening at: ${chalk.green.bold('http://localhost:3000')}`)
+portfinder.getPort({
+  port: 3000
+}, (err, port) => {
+  instance.waitUntilValid(() => {
+    console.log(`> App Listening at: ${chalk.green.bold('http://localhost:' + port)}`)
+  })
+  app.listen(port)
 })
-app.listen(3000)

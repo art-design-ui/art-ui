@@ -128,6 +128,7 @@
     "jest": "^26.0.1",
     "less-loader": "^6.1.2",
     "lint-staged": "^10.2.11",
+    "portfinder": "^1.0.26",
     "prettier": "^2.0.5",
     "prettier-stylelint": "^0.4.2",
     "react-docgen-typescript-loader": "^3.7.2",
