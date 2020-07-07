@@ -2,19 +2,10 @@ import React, { FC, HTMLAttributes } from 'react'
 import classNames from 'classnames'
 import { getPrefixCls } from '@util'
 import EditorHeader from './components/header'
+import { EditorClass, EditorHeaderMenu } from './interface'
 
-/**
- * @description 样式
- */
-interface EditorClass {
-  /** 主体样式 */
-  body: string
-  /** 头部样式 */
-  header: string
-  /** 富文本样式 */
-  main: string
-}
 export type EditorProps = HTMLAttributes<HTMLDivElement>
+const defautMenuConfig: Array<string | EditorHeaderMenu> = ['header', 'blod']
 
 const prefixCls = getPrefixCls('editor')
 export const Editor: FC<EditorProps> = (props: EditorProps) => {
@@ -26,7 +17,7 @@ export const Editor: FC<EditorProps> = (props: EditorProps) => {
   }
   return (
     <div className={classes.body} {...restProps}>
-      <EditorHeader className={classes.header} />
+      <EditorHeader className={classes.header} menu={defautMenuConfig} />
       <div className={classes.main} contentEditable />
     </div>
   )

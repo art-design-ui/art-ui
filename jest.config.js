@@ -21,7 +21,8 @@ module.exports = {
     '<rootDir>/es/',
   ],
   moduleNameMapper: {
-    '@util': path.resolve(__dirname, './src/components/_util')
+    '@util': path.resolve(__dirname, './src/components/_util'),
+    'art': path.resolve(__dirname, './src/components/index.ts'),
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   testEnvironment: 'jsdom',

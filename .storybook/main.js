@@ -118,7 +118,10 @@ module.exports = {
       runtimeChunk: true,
     }
     config.resolve.extensions.push('.ts', '.tsx')
-    config.resolve.alias = { "@util": path.resolve(__dirname, '../src/components/_util') }
+    config.resolve.alias = {
+      "@util": path.resolve(__dirname, '../src/components/_util'),
+      "art": path.resolve(__dirname, '../src/components/index.ts'),
+    }
     return config
   },
 }

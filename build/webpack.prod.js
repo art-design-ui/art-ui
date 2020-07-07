@@ -20,7 +20,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
-    alias: { '@util': path.resolve(__dirname, '../src/components/_util') },
+    alias: {
+      'art': path.resolve(__dirname, '../src/components/index.ts'),
+      '@util': path.resolve(__dirname, '../src/components/_util')
+    },
   },
   externals: {
     react: {
