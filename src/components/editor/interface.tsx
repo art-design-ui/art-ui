@@ -1,6 +1,13 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 /**
+ * @description 编辑器配置
+ */
+export interface EditorBaseProps {
+  menu?: Array<string | EditorHeaderMenu>
+}
+
+/**
  * @description 样式
  */
 export interface EditorClass {
