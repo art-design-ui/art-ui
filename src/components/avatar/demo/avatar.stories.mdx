@@ -1,0 +1,52 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import Avatar from '../avatar'
+import '../style/index.less'
+const imgUrl = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594185288224&di=69a8ce9b9c463e4fb4caf8671c17e0ce&imgtype=0&src=http%3A%2F%2Fimg.qqzhi.com%2Fuploads%2F2018-12-31%2F055157108.jpg'
+
+<Meta title="组件|Avatar " component={Avatar} />
+
+> 用于各种头像组件（开发中...）。
+
+## 何时使用
+
+- 页面局部处于等待异步数据或正在渲染过程时，合适的加载动效会有效缓解用户的焦虑。
+
+## 基本用法
+
+<Preview>
+  <Story name="基本用法">
+    <div className="doc-wrapper-spin">
+      <Avatar src={imgUrl} alt='丝袜美女'/>
+    </div>
+  </Story>
+</Preview>
+
+## 各种大小
+
+<Preview>
+  <Story name="各种大小">
+    <div className="doc-wrapper-spin">
+      <Avatar size={'small'} src={imgUrl} alt='丝袜美女'/>
+      <Avatar size={'large'} src={imgUrl} alt='丝袜美女'/>
+      <Avatar shape='circle' size={250} src={imgUrl} alt='丝袜美女'/>
+      <Avatar size={20} src={imgUrl} alt='丝袜美女'/>
+      <Avatar alt='丝袜美女' />
+    </div>
+  </Story>
+</Preview>
+
+## 放入一个容器中。
+
+<Preview>
+  <Story name="两种大小">
+    <div className="doc-wrapper-spin container">
+      <Avatar size={'large'} src={imgUrl} alt={'丝袜美女'}/>
+    </div>
+  </Story>
+</Preview>
+
+## API
+
+<Story name="API" />
+
+<Props of={Avatar} />
