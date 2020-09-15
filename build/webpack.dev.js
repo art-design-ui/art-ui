@@ -69,6 +69,15 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.ts|\.tsx|\.js|\.json/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          fix: true,
+          cache: true,
+        },
+      },
     ],
   },
   plugins: [
