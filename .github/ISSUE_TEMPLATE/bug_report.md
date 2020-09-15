@@ -1,6 +1,6 @@
 ---
 name: '报告 Bug 🐛'
-about: 报告 Ant Design Pro 的 bug
+about: 报告 art-design-ui 的 bug
 title: '🐛[BUG]'
 labels: '🐛bug'
 assignees: ''
