@@ -328,3 +328,26 @@
 @avatar-size-lg: 40px;
 @avatar-size-sm: 24px;
 @avatar-border-radius: @border-radius-circle;
+
+
+// Alert
+@alert-padding-md: 1rem;
+@alert-padding-xs: .5rem;
+@alert-success-border-color:        lighten(@green, 30%);
+@alert-success-bg-color:            lighten(@green, 52%);
+@alert-info-border-color:           lighten(@cyan, 20%);
+@alert-info-bg-color:               lighten(@cyan, 40%);
+@alert-warning-border-color:        lighten(@orange, 20%);
+@alert-warning-bg-color:            lighten(@orange, 40%);
+@alert-error-border-color:          lighten(@red, 20%);
+@alert-error-bg-color:              lighten(@red, 40%);
+@alert-text-color: @body-color;
+@alert-no-icon-padding-vertical: @alert-padding-xs;
+@alert-icon-top: 0.25rem + @font-size-base * @line-height-base / 2 - @font-size-base / 2;
+@alert-with-description-icon-size: 1.5rem;
+@alert-with-description-padding-vertical: @alert-padding-md - 0.0625rem;
+@alert-with-description-no-icon-padding-vertical: @alert-padding-md - 0.0625rem;
+@alert-with-description-padding: @alert-with-description-padding-vertical 15px @alert-with-description-no-icon-padding-vertical @alert-with-description-icon-size * 2 + @alert-with-description-padding-vertical;
+
+@alert-with-description-no-icon-padding-vertical: @alert-padding-md - 0.0625rem;
+@alert-with-description-icon-top: @alert-with-description-padding-vertical;

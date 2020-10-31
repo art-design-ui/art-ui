@@ -1,0 +1,101 @@
+@import '../../styles/variables.less';
+
+@alert-prefix-cls: ~'@{art-prefix}-alert';
+
+.@{alert-prefix-cls} {
+  position: relative;
+  color: @body-color;
+  white-space: normal;
+  line-height: @line-height-base;
+  margin: 0;
+  padding: 8px 15px 8px 37px;
+  word-wrap: break-word;
+  border-radius: @border-radius;
+
+  &-success {
+    border: @border-width @border-solid-style @alert-success-border-color;
+    background-color: @alert-success-bg-color;
+  }
+  &-success &-icon {
+    color: @green;
+  }
+
+  &-info {
+    border: @border-width @border-solid-style @alert-info-border-color;
+    background-color: @alert-info-bg-color;
+  }
+  &-info &-icon {
+    color: lighten(@cyan, 5%);
+  }
+
+  &-warning {
+    border: @border-width @border-solid-style @alert-warning-border-color;
+    background-color: @alert-warning-bg-color;
+  }
+  &-warning &-icon {
+    color: lighten(@orange, 5%);
+  }
+
+  &-error {
+    border: @border-width @border-solid-style @alert-error-border-color;
+    background-color: @alert-error-bg-color;
+  }
+  &-error &-icon {
+    color: lighten(@red, 5%);
+  }
+
+  &-description {
+    display: none;
+    font-size: @font-size-base;
+    line-height: @font-size-base + 0.5rem;
+  }
+
+  &&-no-icon {
+    padding: @alert-no-icon-padding-vertical 15px;
+    &-close-cion {
+      top: @alert-no-icon-padding-vertical + @font-size-base * @line-height-base / 2 - @font-size-base;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    top: @alert-icon-top;
+    left: 16px;
+  }
+
+  & &-closable {
+    padding-right: 30px;
+  }
+
+  &-close-icon {
+    position: absolute;
+    top: .25rem + @font-size-base * @line-height-base / 2 - @font-size-base / 2;
+    right: @alert-padding-md;
+    padding: 0;
+  }
+
+  &-with-description {
+    position: relative;
+    padding: @alert-with-description-padding;
+    color: @alert-text-color;
+    line-height: @line-height-base;
+    border-radius: @border-radius;
+
+    .@{alert-prefix-cls}-icon {
+      position: absolute;
+      top: @alert-with-description-icon-top;
+      left: @alert-with-description-icon-size;
+      font-size: @alert-with-description-icon-size;
+    }
+
+    .@{alert-prefix-cls}-message {
+      display: block;
+      margin-bottom: 4px;
+      font-size: @font-size-lg;
+    }
+
+    .@{alert-prefix-cls}-description {
+      display: block;
+    }
+  }
+}
