@@ -8,10 +8,7 @@
     },
     "target": "es5",
     "module": "commonjs",
-    // react模式会生成React.createElement，在使用前不需要再进行转换操作了
     "jsx": "react",
-    "declaration": true,
-    "declarationDir": "lib",
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
