@@ -4,9 +4,8 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "declarationDir": "lib",
-    "declarationMap": true,
     "isolatedModules": false,
     "noEmit": false
   },
-  "exclude": ["node_modules", "**/__tests__/**", "**/demo/**", "lib", "es"]
+  "exclude": ["node_modules", "**/__tests__/**", "**/demo/**", "lib", "es", "src/example"]
 }

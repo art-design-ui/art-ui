@@ -76,12 +76,12 @@ function compileCJS() {
 /**
  * 编译es
  */
-function compilees() {
+function compileESM() {
   const { dest } = paths
-  return compileScripts('es', dest.es)
+  return compileScripts('esm', dest.es)
 }
 
-const buildScripts = gulp.series(compileCJS, compilees)
+const buildScripts = gulp.series(compileCJS, compileESM)
 
 /**
  * 拷贝less文件
@@ -137,5 +137,8 @@ function less2UmdCss() {
 const build = gulp.parallel(buildScripts, copyLess, less2css, less2UmdCss)
 
 exports.build = build
-
 exports.default = build
+
+// DEBUG
+exports.less2css = less2css
+exports.copyLess = copyLess

@@ -36,7 +36,7 @@
     "build:types": "tsc -p tsconfig.types.json && cpr lib es -o",
     "build:types.log": "tsc -p tsconfig.types.json --listEmittedFiles && cpr lib es -o",
     "build:umd": "webpack --config build/webpack.prod.js --progress",
-    "build": "yarn run clean && yarn run build:types & yarn run gulp && yarn run build:umd",
+    "build": "yarn run clean && yarn run build:types && yarn run gulp && yarn run build:umd",
     "test": "jest --config jest.config.js",
     "gulp": "gulp --gulpfile ./build/gulpfile.js",
     "test:update": "jest --config jest.config.js --updateSnapshot",
